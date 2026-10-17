@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Новости дня: главные события, технологии, мир, бизнес, культура и спорт.">
+<title>Реальный Воронеж — новости дня</title>
+<style>
+:root{--ink:#17191f;--muted:#737782;--line:#e7e8ec;--paper:#fff;--soft:#f5f6f8;--accent:#e83945;--dark:#17191f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+.topline{background:var(--dark);color:#fff;font-size:12px}.topline .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 0}.live{color:#ff737b;font-weight:800;letter-spacing:.08em}
+header{border-bottom:1px solid var(--line);background:#fff}.brandrow{display:flex;align-items:center;justify-content:space-between;padding:22px 0 18px;gap:20px}.brand{font-size:34px;line-height:1;font-weight:950;letter-spacing:-2px}.brand span{color:var(--accent)}.tagline{color:var(--muted);font-size:12px;margin-top:5px}.search{display:flex;gap:8px;align-items:center}.search form{display:flex;gap:8px;align-items:center}.search input{width:220px;border:1px solid var(--line);border-radius:999px;padding:10px 15px;outline:none}.search input:focus{border-color:var(--accent)}.search button{border:0;border-radius:999px;background:var(--ink);color:#fff;padding:10px 15px;cursor:pointer}
+nav{display:flex;gap:26px;overflow-x:auto;white-space:nowrap;padding:0 0 14px;font-size:13px;font-weight:750}nav a{padding:5px 0;border-bottom:2px solid transparent}nav a:hover,nav a.active{border-color:var(--accent);color:var(--accent)}
+main{padding:28px 0 60px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:850;color:var(--accent)}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:0 0 16px}.sectionhead h2{font-size:18px;margin:0;letter-spacing:-.4px}.sectionhead span{font-size:12px;color:var(--muted)}
+.leadgrid{display:grid;grid-template-columns:1.45fr .8fr;gap:22px;margin-bottom:36px}.hero{position:relative;min-height:390px;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,#15263e,#425e7a 55%,#d5a57e);color:#fff;display:flex;align-items:flex-end;padding:30px}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 78%)}.hero-art{position:absolute;inset:0;opacity:.7;background:radial-gradient(ellipse at 70% 30%,rgba(255,220,172,.85),transparent 22%),linear-gradient(130deg,transparent 35%,rgba(255,255,255,.12) 35.3%,transparent 36%),linear-gradient(35deg,transparent 55%,rgba(255,255,255,.13) 55.4%,transparent 56%)}.hero-content{position:relative;max-width:620px}.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-1.5px;margin:10px 0 12px}.hero p{color:#e8ebf0;margin:0 0 18px;max-width:600px}.meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center}.hero .meta{color:#e0e4e9}.pill{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:850;background:var(--accent);color:#fff;border-radius:4px;padding:5px 8px}
+.sidelead{display:flex;flex-direction:column;gap:0}.sideitem{display:grid;grid-template-columns:104px 1fr;gap:14px;padding:0 0 16px;margin-bottom:16px;border-bottom:1px solid var(--line)}.sideitem:last-child{border-bottom:0;margin-bottom:0}.thumb{height:92px;border-radius:9px;background:linear-gradient(140deg,#a6b6c5,#354a63);position:relative;overflow:hidden}.thumb:after{content:"";position:absolute;inset:20% -10% -30% 35%;border-radius:50%;background:rgba(255,255,255,.22)}.thumb.t2{background:linear-gradient(140deg,#d6a45c,#7b4b2a)}.thumb.t3{background:linear-gradient(140deg,#7eb8a0,#205d5c)}.thumb.t4{background:linear-gradient(140deg,#9a8ac6,#433a69)}.sideitem h3{font-size:15px;line-height:1.3;margin:7px 0 8px;letter-spacing:-.2px}.sideitem .meta{font-size:11px}
+.contentgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card{border-bottom:1px solid var(--line);padding-bottom:18px;cursor:pointer}.cardvisual{height:155px;border-radius:12px;margin-bottom:13px;overflow:hidden;position:relative;background:linear-gradient(135deg,#b3c4d3,#4b6279)}.cardvisual:before{content:"";position:absolute;width:65%;height:120%;left:22%;top:25%;border-radius:50% 50% 0 0;background:rgba(255,255,255,.23);transform:rotate(-18deg)}.cardvisual.v2{background:linear-gradient(135deg,#e6c38b,#a35d46)}.cardvisual.v3{background:linear-gradient(135deg,#9dc9b4,#35776e)}.cardvisual.v4{background:linear-gradient(135deg,#b5addc,#5d5591)}.cardvisual.v5{background:linear-gradient(135deg,#d2d5db,#606d7e)}.cardvisual.v6{background:linear-gradient(135deg,#f0a4a0,#9c3747)}.no-photo{display:flex;align-items:center;justify-content:center;background:#eef0f3!important;color:#737782;font-weight:800;font-size:18px;letter-spacing:.02em}.no-photo:before{display:none}.card h3{font-size:19px;line-height:1.25;letter-spacing:-.45px;margin:9px 0}.card p{font-size:13px;color:#5f636d;margin:0 0 12px}.card:hover h3{color:var(--accent)}.category{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:850;color:var(--accent)}
+.sidebar{border-left:1px solid var(--line);padding-left:24px}.trendlist{list-style:none;margin:0;padding:0;counter-reset:trend}.trendlist li{counter-increment:trend;padding:15px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:30px 1fr;gap:10px}.trendlist li:before{content:"0" counter(trend);font-size:20px;font-weight:900;color:#c6c8ce;letter-spacing:-1px}.trendlist h3{font-size:14px;line-height:1.35;margin:0 0 6px}.trendlist .meta{font-size:11px}.newsletter{background:var(--soft);border-radius:14px;padding:20px;margin-top:28px}.newsletter h3{margin:0 0 7px;font-size:19px;letter-spacing:-.5px}.newsletter p{font-size:12px;color:var(--muted);margin:0 0 14px}.newsletter input{width:100%;border:1px solid #dddfe5;background:#fff;border-radius:8px;padding:11px;margin-bottom:9px}.newsletter button{width:100%;border:0;border-radius:8px;background:var(--accent);color:#fff;padding:11px;font-weight:800;cursor:pointer}.newsletter small{display:block;color:#227a54;margin-top:9px}
+.latest{margin-top:36px}.latestrow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.latestrow h2{font-size:21px;margin:0}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:750;cursor:pointer}.filter.selected,.filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}.empty{display:none;color:var(--muted);padding:20px 0}
+footer{background:var(--dark);color:#fff;padding:30px 0}.footerrow{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footerbrand{font-size:24px;font-weight:950;letter-spacing:-1px}.footerbrand span{color:var(--accent)}footer p{font-size:12px;color:#b6bac4;margin:5px 0 0}.footerlinks{display:flex;gap:18px;color:#d7d9df;font-size:12px}.admin-footer-btn{border:1px solid #555b68;background:#242832;color:#fff;border-radius:9px;padding:10px 16px;font-weight:800;cursor:pointer}.admin-footer-btn:hover{background:#343946;border-color:#8b92a1}
+.modal{position:fixed;inset:0;background:rgba(10,12,17,.62);display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal.open{display:flex}.modalbox{background:#fff;max-width:650px;width:100%;border-radius:16px;padding:28px;max-height:85vh;overflow:auto;position:relative}.close{position:absolute;right:16px;top:12px;border:0;background:var(--soft);border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:20px}.modalbox h2{font-size:28px;line-height:1.15;letter-spacing:-.8px;margin:12px 35px 12px 0}.modalbox p{color:#565b65}.modalbox .meta{margin-bottom:18px}
+.submit-page{position:fixed;inset:0;background:#f5f6f8;z-index:30;display:none;overflow:auto;padding:24px 16px}.submit-page.open{display:block}.submit-inner{max-width:720px;margin:20px auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}.submit-inner h1{font-size:28px;margin:8px 0 20px}.submit-inner textarea{width:100%;min-height:180px;resize:vertical;border:1px solid #dfe1e6;border-radius:12px;padding:14px;font:inherit}.submit-tools{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.submit-tools label,.submit-tools button,.submit-send{border:0;border-radius:9px;padding:11px 15px;background:#eceef2;color:var(--ink);font-weight:750;cursor:pointer}.submit-tools input{max-width:100%}.submit-send{background:var(--accent);color:#fff}.submit-preview{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:13px}.submit-preview img,.submit-preview video{max-width:100%;max-height:240px;border-radius:10px}.submit-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.submit-close{border:0;border-radius:50%;width:40px;height:40px;font-size:24px;cursor:pointer;background:#eceef2}
+ 
+.admin-login{display:none;background:#f5f6f8;border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 24px}.admin-login.open{display:block}.admin-login h2{margin:0 0 8px}.admin-login p{font-size:13px;color:var(--muted)}.admin-login form{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.admin-login input{flex:1;min-width:180px;border:1px solid #dfe1e6;border-radius:8px;background:#fff;padding:12px;font:inherit}.admin-login button{border:0;border-radius:8px;padding:12px 18px;background:var(--ink);color:#fff;font-weight:800;cursor:pointer}.login-error{width:100%;color:#bd2430;font-size:13px}.admin-panel{display:none;background:#f5f6f8;border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 28px}.admin-panel.open{display:block}.admin-panel h2{margin:0 0 8px}.admin-panel p{font-size:13px;color:var(--muted)}.admin-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.admin-form input,.admin-form textarea,.admin-form select{width:100%;border:1px solid #dfe1e6;border-radius:8px;background:white;padding:11px;font:inherit}.admin-form textarea{min-height:90px;resize:vertical;grid-column:1/-1}.admin-form .wide{grid-column:1/-1}.admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.admin-actions button{border:0;border-radius:8px;padding:10px 14px;background:var(--ink);color:white;font-weight:800;cursor:pointer}.admin-actions .secondary{background:#e3e5ea;color:var(--ink)}.admin-list{margin-top:18px;display:grid;gap:8px}.admin-row{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px;display:flex;justify-content:space-between;align-items:center;gap:12px}.admin-row button{border:0;background:#eceef2;border-radius:6px;padding:7px 10px;cursor:pointer}.admin-preview{max-width:140px;max-height:90px;border-radius:8px;object-fit:cover}.admin-status{font-size:12px;color:#227a54;margin-top:8px}.admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.admin-tabs button{border:1px solid #dfe1e6;border-radius:9px;background:#fff;padding:10px 13px;font-weight:800;cursor:pointer}.admin-tabs button.active{background:var(--ink);color:#fff}.subscriber-box{display:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}.subscriber-box.open{display:block}.subscriber-item{border:1px solid var(--line);border-radius:10px;padding:14px;margin:10px 0}.subscriber-item p{white-space:pre-wrap;overflow-wrap:anywhere}.subscriber-item .accept{background:#18794e;color:#fff}.subscriber-item .reject{background:#b42332;color:#fff}.status-notice{padding:12px;border-radius:9px;background:#eef6ff;color:#164e87;margin-top:12px}
+
+.category-page{position:fixed;inset:0;z-index:20;background:#fff;display:none;overflow:auto;padding:0 0 40px}.category-page.open{display:block}.category-page-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:1;padding:16px max(12px,calc((100vw - 1180px)/2));display:flex;align-items:center;gap:16px}.back-button{border:0;border-radius:9px;background:var(--ink);color:#fff;padding:10px 16px;font-weight:800;cursor:pointer;white-space:nowrap}.category-page-title{font-size:24px;font-weight:900;letter-spacing:-.6px;margin:0}.category-page-content{width:min(1180px,calc(100% - 36px));margin:24px auto}.category-page-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.category-page-empty{padding:28px 0;color:var(--muted);font-size:17px}.category-page .card{cursor:pointer}
+@media(max-width:800px){.leadgrid,.contentgrid{grid-template-columns:1fr}.hero{min-height:360px}.sidelead{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.sideitem{grid-template-columns:88px 1fr;margin:0}.thumb{height:82px}.contentgrid{gap:30px}.sidebar{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px}.trendlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}}
+@media(max-width:640px){.category-page-head{padding:12px;gap:12px}.category-page-title{font-size:20px}.category-page-content{width:calc(100% - 24px)}.category-page-cards{grid-template-columns:1fr}.back-button{padding:10px 12px}
+.admin-login,.admin-panel{padding:14px;border-radius:12px}.admin-login form{display:grid;grid-template-columns:1fr}.admin-login input,.admin-login button{width:100%;min-width:0}.admin-form{grid-template-columns:minmax(0,1fr)}.admin-form textarea,.admin-form .wide{grid-column:1}.admin-form label{min-width:0;overflow-wrap:anywhere}.admin-form input[type=file]{font-size:13px;padding:8px}.admin-actions{display:grid;grid-template-columns:1fr}.admin-actions button{width:100%;padding:12px}.admin-row{align-items:stretch;flex-direction:column}.admin-row>div:last-child{display:flex;flex-wrap:wrap;gap:8px}.admin-row button{padding:10px 12px}.admin-preview{max-width:100%;height:auto}.sectionhead{gap:10px;align-items:flex-start;flex-wrap:wrap}}
+@media(max-width:540px){.wrap{width:min(100% - 24px,1180px)}.topline .wrap{font-size:10px}.brandrow{padding:18px 0 14px;align-items:flex-start}.brand{font-size:29px}.tagline{max-width:180px}.search input{width:120px}.search button{display:none}nav{gap:19px;font-size:12px}.hero{padding:22px;min-height:365px}.hero h1{font-size:30px}.sidelead{grid-template-columns:1fr}.sideitem{grid-template-columns:96px 1fr}.thumb{height:84px}.cards{grid-template-columns:1fr;gap:20px}.cardvisual{height:190px}.trendlist{grid-template-columns:1fr}.latestrow{align-items:flex-start;flex-direction:column}.footerlinks{flex-wrap:wrap}}
+
+
+</style>
+</head>
+<body>
+<div class="topline"><div class="wrap"><span><span class="live">● LIVE</span> Главное за день</span><span id="today"></span></div></div>
+<header><div class="wrap">
+  <div class="brandrow"><div><a class="brand" href="https://reallvoronezh">Реальный Воронеж<span>.</span></a><div class="tagline">Новости, которые держат в курсе</div><div class="tagline"><a href="https://reallvoronezh" target="_blank" rel="noopener">https://reallvoronezh</a></div></div>
+    <div class="search"><form id="searchForm"><input id="searchInput" aria-label="Поиск новостей" placeholder="Найти новость…"><button type="submit">Поиск</button></form></div>
+  </div>
+  <nav id="nav"><a href="#" class="active" data-filter="Все">Главное</a><a href="#" data-filter="Мир">Мир</a><a href="#" data-filter="Технологии">Технологии</a><a href="#" data-filter="Бизнес">Бизнес</a><a href="#" data-filter="Наука">Наука</a><a href="#" data-filter="Культура">Культура</a><a href="#" data-filter="Спорт">Спорт</a></nav>
+</div></header>
+<main class="wrap">
+  <section class="admin-login" id="adminLogin">
+    <h2>Вход в панель администратора</h2>
+    <p>Введите пароль для управления новостями.</p>
+    <form id="adminLoginForm">
+      <input id="adminPassword" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Пароль" required>
+      <button type="submit">Войти</button>
+      <div id="loginError" class="login-error" aria-live="polite"></div>
+    </form>
+  </section>
+  <section class="admin-panel" id="adminPanel">
+    <div class="sectionhead"><h2>Панель администратора</h2><span>Управление публикациями</span></div>
+    <p>Добавляйте и редактируйте новости, с фотографией или без неё, меняйте рубрики и загружайте фотографии. Изменения в этой демоверсии сохраняются в браузере на этом устройстве.</p>
+    <form id="adminForm" class="admin-form">
+      <input id="editId" type="hidden">
+      <input id="newsTitle" class="wide" placeholder="Заголовок новости" required>
+      <select id="newsCategory"><option>Мир</option><option>Технологии</option><option>Бизнес</option><option>Наука</option><option>Культура</option><option>Спорт</option></select>
+      <input id="newsTime" placeholder="Время публикации, например: Сегодня · 4 минуты">
+      <textarea id="newsSummary" placeholder="Краткое описание" required></textarea>
+      <label class="wide">Фото новости (необязательно — можно оставить пустым) <input id="newsPhoto" type="file" accept="image/*"></label>
+      <p class="wide" style="margin:0;color:#737782;font-size:12px">Если фото не выбрано, новость опубликуется с надписью «Без фото».</p><img id="photoPreview" class="admin-preview" alt="Предпросмотр фото" style="display:none">
+      <div class="wide admin-actions"><button type="submit" id="saveNews">Сохранить новость</button><button type="button" class="secondary" id="clearEditor">Очистить форму</button><button type="button" class="secondary" id="exportNews">Экспорт новостей (JSON)</button></div>
+    </form>
+    <div class="admin-tabs"><button type="button" id="manageNewsTab" class="active">Мои новости</button><button type="button" id="subscriberNewsTab">Новости от подписчиков <span id="pendingCount"></span></button></div>
+    <div id="adminStatus" class="admin-status" aria-live="polite"></div>
+    <div id="adminList" class="admin-list"></div>
+    <section id="subscriberQueue" class="subscriber-box" aria-live="polite"><h3>Новости от подписчиков</h3><p>Здесь отображаются отправленные материалы, сохранённые в этом браузере.</p><div id="subscriberList"></div></section>
+  </section>
+  <div class="sectionhead"><h2>В центре внимания</h2><span>Подборка редакции</span></div>
+  <section class="leadgrid">
+    <article class="hero story" data-category="Мир" data-title="Города будущего: как меняется жизнь мегаполисов" data-body="Города переосмысливают общественные пространства, транспорт и энергопотребление. В центре внимания — удобство жителей, экологичность и доступность городской среды. Эксперты отмечают, что самые заметные изменения начинаются с небольших решений: безопасных улиц, зелёных зон и понятного общественного транспорта.">
+      <div class="hero-art"></div><div class="hero-content"><span class="pill">Главная тема</span><h1>Города будущего: как меняется жизнь мегаполисов</h1><p>Новые идеи меняют транспорт, архитектуру и привычный ритм городской жизни.</p><div class="meta"><span>Редакция Реальный Воронеж</span><span>•</span><span>6 минут чтения</span></div></div>
+    </article>
+    <div class="sidelead">
+      <article class="sideitem story" data-category="Технологии" data-title="Искусственный интеллект становится частью повседневности" data-body="Цифровые помощники всё чаще используются для поиска информации, обучения и рутинных задач. Вместе с удобством растёт интерес к вопросам прозрачности, безопасности данных и ответственному применению технологий."><div class="thumb"></div><div><span class="category">Технологии</span><h3>Искусственный интеллект становится частью повседневности</h3><div class="meta">Сегодня · 4 мин</div></div></article>
+      <article class="sideitem story" data-category="Бизнес" data-title="Малый бизнес ищет новые способы расти" data-body="Предприниматели тестируют цифровые сервисы, новые форматы обслуживания и локальные партнёрства. Гибкость и близость к клиентам остаются важными преимуществами небольших компаний."><div class="thumb t2"></div><div><span class="category">Бизнес</span><h3>Малый бизнес ищет новые способы расти</h3><div class="meta">Сегодня · 3 мин</div></div></article>
+      <article class="sideitem story" data-category="Наука" data-title="Учёные объясняют, почему океан важен для климата" data-body="Океан поглощает значительную часть избыточного тепла и участвует в круговороте углерода. Наблюдения за морскими экосистемами помогают исследователям лучше понимать изменения климата и прогнозировать их последствия."><div class="thumb t3"></div><div><span class="category">Наука</span><h3>Почему океан так важен для климата</h3><div class="meta">Вчера · 5 мин</div></div></article>
+      <article class="sideitem story" data-category="Культура" data-title="Культурные пространства возвращаются в районы" data-body="Библиотеки, небольшие галереи и независимые сцены становятся точками притяжения для местных сообществ. Такие площадки дают возможность знакомиться, учиться и создавать собственные проекты."><div class="thumb t4"></div><div><span class="category">Культура</span><h3>Культурные пространства возвращаются в районы</h3><div class="meta">Вчера · 4 мин</div></div></article>
+    </div>
+  </section>
+  <section class="contentgrid">
+    <div>
+      <div class="sectionhead"><h2>Свежие материалы</h2><span id="resultCount">6 публикаций</span></div>
+      <div class="cards" id="cards">
+        <article class="card story" data-category="Технологии" data-title="Что нового в мире персональных устройств" data-body="Производители делают ставку на автономность, удобство и функции, которые действительно упрощают повседневные задачи. При выборе устройства специалисты советуют обращать внимание не только на характеристики, но и на срок поддержки программного обеспечения."><div class="cardvisual"></div><span class="category">Технологии</span><h3>Что нового в мире персональных устройств</h3><p>На какие изменения стоит обратить внимание и какие функции становятся привычными.</p><div class="meta">Сегодня · 4 минуты</div></article>
+        <article class="card story" data-category="Бизнес" data-title="Экономика внимания: как бренды находят аудиторию" data-body="В условиях большого потока информации компании стремятся говорить с аудиторией точнее и полезнее. Качественный контент, честная коммуникация и доверие часто оказываются важнее количества публикаций."><div class="cardvisual v2"></div><span class="category">Бизнес</span><h3>Как бренды находят свою аудиторию</h3><p>Почему доверие и полезный контент становятся важнее громких обещаний.</p><div class="meta">Сегодня · 5 минут</div></article>
+        <article class="card story" data-category="Наука" data-title="Маленькие привычки для более экологичной жизни" data-body="Экологичные изменения не обязательно требуют радикального пересмотра быта. Повторное использование вещей, разумное потребление энергии и сокращение пищевых отходов могут стать простыми отправными точками."><div class="cardvisual v3"></div><span class="category">Наука</span><h3>Маленькие привычки для более экологичной жизни</h3><p>Практичные шаги, которые легко встроить в повседневный распорядок.</p><div class="meta">Вчера · 3 минуты</div></article>
+        <article class="card story" data-category="Культура" data-title="Почему люди снова выбирают бумажные книги" data-body="Бумажная книга предлагает отдельный опыт чтения: меньше уведомлений, тактильные ощущения и возможность собирать личную библиотеку. Цифровые форматы при этом остаются удобными для поездок и быстрого доступа к текстам."><div class="cardvisual v4"></div><span class="category">Культура</span><h3>Почему люди снова выбирают бумажные книги</h3><p>Чтение без уведомлений, книжные клубы и радость личных библиотек.</p><div class="meta">Вчера · 6 минут</div></article>
+        <article class="card story" data-category="Спорт" data-title="Как любительский спорт становится частью городской жизни" data-body="Беговые клубы, открытые площадки и совместные тренировки помогают людям поддерживать активность и знакомиться с соседями. Для многих важнее регулярность и удовольствие от процесса, чем спортивные рекорды."><div class="cardvisual v5"></div><span class="category">Спорт</span><h3>Любительский спорт выходит на улицы</h3><p>Городские клубы объединяют людей вокруг движения и общих целей.</p><div class="meta">16 октября · 4 минуты</div></article>
+        <article class="card story" data-category="Мир" data-title="Путешествия вне сезона: новый взгляд на знакомые места" data-body="Поездки вне пикового сезона могут открыть более спокойную сторону популярных направлений. Планируя путешествие, полезно учитывать местный климат, расписание транспорта и сезон работы музеев и достопримечательностей."><div class="cardvisual v6"></div><span class="category">Мир</span><h3>Путешествия вне сезона: новый взгляд</h3><p>Как открыть знакомые места без толп и спешки.</p><div class="meta">15 октября · 3 минуты</div></article>
+      </div>
+      <div class="empty" id="empty">По вашему запросу ничего не найдено. Попробуйте другой поиск.</div>
+      <section class="latest"><div class="latestrow"><h2>Все темы</h2><div class="filters" id="filters"><button class="filter selected" data-filter="Все">Все</button><button class="filter" data-filter="Мир">Мир</button><button class="filter" data-filter="Технологии">Технологии</button><button class="filter" data-filter="Бизнес">Бизнес</button><button class="filter" data-filter="Наука">Наука</button><button class="filter" data-filter="Культура">Культура</button><button class="filter" data-filter="Спорт">Спорт</button></div></div></section>
+    </div>
+    <aside class="sidebar"><div class="sectionhead"><h2>Топ новости</h2><span>Топ-5</span></div>
+      <ol class="trendlist">
+        <li><div><h3>Как технологии меняют привычный рабочий день</h3><div class="meta">Технологии · 8,2 тыс. просмотров</div></div></li>
+        <li><div><h3>Пять идей для спокойных выходных</h3><div class="meta">Стиль жизни · 6,7 тыс. просмотров</div></div></li>
+        <li><div><h3>Что важно знать о цифровой безопасности</h3><div class="meta">Объясняем · 5,9 тыс. просмотров</div></div></li>
+        <li><div><h3>Новые маршруты для коротких поездок</h3><div class="meta">Мир · 4,8 тыс. просмотров</div></div></li>
+        <li><div><h3>Почему сон важен для концентрации</h3><div class="meta">Наука · 4,1 тыс. просмотров</div></div></li>
+      </ol>
+      <section class="newsletter" id="sendNews"><h3>Есть новость?</h3><p>Расскажите редакции, что произошло.</p><button type="button" id="sendNewsBtn">Прислать новость</button></section>
+    </aside>
+  </section>
+</main>
+<footer><div class="wrap footerrow"><div><a class="footerbrand" href="https://reallvoronezh">Реальный Воронеж<span>.</span></a><p>Новости без лишнего шума.</p></div><div class="footerlinks"><a href="#">О редакции</a><a href="#">Контакты</a><a href="#">Реклама</a><a href="https://reallvoronezh" target="_blank" rel="noopener">reallvoronezh</a><a href="#">Политика конфиденциальности</a></div><p>© <span id="year"></span> Реальный Воронеж. Новостной сайт.</p><button type="button" class="admin-footer-btn" id="adminFooterBtn">Админ</button></div></footer>
+<section class="submit-page" id="submitPage" aria-label="Прислать новость"><div class="submit-inner"><div class="submit-top"><a class="brand" href="#">Реальный Воронеж<span>.</span></a><button type="button" class="submit-close" id="submitClose" aria-label="Закрыть">×</button></div><h1>Чем хотите поделиться?</h1><form id="submitNewsForm"><textarea id="submitText" placeholder="Расскажите, что произошло…" aria-label="Текст новости"></textarea><div class="submit-tools"><label>Добавить фото/видео <input id="submitMedia" type="file" accept="image/*,video/*" multiple></label></div><div class="submit-preview" id="submitPreview"></div><button class="submit-send" type="submit">Отправить редакции</button><p id="submitStatus" class="meta" aria-live="polite"></p><div id="mySubmissionStatuses" aria-live="polite"></div></form></div></section>
+<section class="category-page" id="categoryPage" aria-label="Публикации категории" aria-hidden="true"><div class="category-page-head"><button type="button" class="back-button" id="categoryBack">← Назад</button><h1 class="category-page-title" id="categoryPageTitle">Категория</h1></div><div class="category-page-content"><div class="category-page-cards" id="categoryPageCards"></div><p class="category-page-empty" id="categoryPageEmpty" style="display:none">Нет публикаций</p></div></section>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalbox"><button class="close" id="closeModal" aria-label="Закрыть">×</button><span class="category" id="modalCategory">Новости</span><h2 id="modalTitle"></h2><div class="meta">Реальный Воронеж · Материал редакции</div><p id="modalBody"></p></div></div>
+<script>
+
+const now = new Date();
+document.getElementById('today').textContent = new Intl.DateTimeFormat('ru-RU',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+document.getElementById('year').textContent = now.getFullYear();
+const stories = [...document.querySelectorAll('.story')];
+const cards = [...document.querySelectorAll('#cards .story')];
+const searchInput = document.getElementById('searchInput');
+let activeCategory = 'Все';
+function updateCards(){
+  const q = searchInput.value.trim().toLocaleLowerCase('ru');
+  let count = 0;
+  cards.forEach(card=>{
+    const category = card.dataset.category;
+    const haystack = (card.dataset.title+' '+card.innerText).toLocaleLowerCase('ru');
+    const visible = (activeCategory==='Все'||category===activeCategory) && (!q||haystack.includes(q));
+    card.style.display = visible ? '' : 'none';
+    if(visible) count++;
+  });
+  document.getElementById('resultCount').textContent = count+' публикаций';
+  document.getElementById('empty').style.display = count ? 'none' : 'block';
+}
+const categoryPage=document.getElementById('categoryPage');
+const categoryPageCards=document.getElementById('categoryPageCards');
+function openCategoryPage(cat){
+  const title=document.getElementById('categoryPageTitle');
+  title.textContent=cat;
+  categoryPageCards.innerHTML='';
+  const matching=[...document.querySelectorAll('#cards .story')].filter(card=>card.dataset.category===cat);
+  matching.forEach(card=>{
+    const clone=card.cloneNode(true);
+    clone.style.display='';
+    clone.addEventListener('click',()=>{
+      document.getElementById('modalCategory').textContent=clone.dataset.category||'Новости';
+      document.getElementById('modalTitle').textContent=clone.dataset.title||clone.querySelector('h3')?.textContent||'Новость';
+      document.getElementById('modalBody').textContent=clone.dataset.body||clone.querySelector('p')?.textContent||'Подробности этой публикации.';
+      modal.classList.add('open');
+    });
+    categoryPageCards.appendChild(clone);
+  });
+  document.getElementById('categoryPageEmpty').style.display=matching.length?'none':'block';
+  categoryPage.classList.add('open');
+  categoryPage.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  categoryPage.scrollTop=0;
+}
+function closeCategoryPage(){categoryPage.classList.remove('open');categoryPage.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+document.getElementById('categoryBack').addEventListener('click',closeCategoryPage);
+function setCategory(cat){
+  activeCategory=cat;
+  document.querySelectorAll('[data-filter]').forEach(el=>el.classList.toggle('active',el.closest('nav') && el.dataset.filter===cat));
+  document.querySelectorAll('#filters .filter').forEach(el=>el.classList.toggle('selected',el.dataset.filter===cat));
+  if(cat==='Все'){
+    closeCategoryPage();
+    updateCards();
+  }else{
+    openCategoryPage(cat);
+  }
+}
+document.querySelectorAll('nav [data-filter],#filters [data-filter]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();setCategory(el.dataset.filter);}));
+document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();updateCards();document.getElementById('cards').scrollIntoView({behavior:'smooth',block:'start'});});
+searchInput.addEventListener('input',updateCards);
+const modal=document.getElementById('modal');
+stories.forEach(story=>story.addEventListener('click',()=>{
+ document.getElementById('modalCategory').textContent=story.dataset.category||'Новости';
+ document.getElementById('modalTitle').textContent=story.dataset.title;
+ document.getElementById('modalBody').textContent=story.dataset.body||'Подробности этой темы можно добавить в панели управления сайтом.';
+ modal.classList.add('open');
+}));
+function closeModal(){modal.classList.remove('open')}
+document.getElementById('closeModal').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();if(categoryPage.classList.contains('open'))closeCategoryPage();}});
+const submitPage=document.getElementById('submitPage');
+document.getElementById('sendNewsBtn').addEventListener('click',()=>{submitPage.classList.add('open');document.body.style.overflow='hidden';renderMySubmissionStatuses();});
+function closeSubmitPage(){submitPage.classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitClose').addEventListener('click',closeSubmitPage);
+document.getElementById('submitMedia').addEventListener('change',e=>{const box=document.getElementById('submitPreview');box.innerHTML='';[...e.target.files].forEach(file=>{const url=URL.createObjectURL(file);let el;if(file.type.startsWith('image/')){el=document.createElement('img');el.alt=file.name;el.src=url;}else if(file.type.startsWith('video/')){el=document.createElement('video');el.src=url;el.controls=true;}else return;box.append(el);});});
+function readSubscriberQueue(){try{return JSON.parse(localStorage.getItem('rv_subscriber_news')||'[]')}catch(e){return []}}
+function saveSubscriberQueue(items){try{localStorage.setItem('rv_subscriber_news',JSON.stringify(items));return true}catch(e){return false}}
+function renderMySubmissionStatuses(){const box=document.getElementById('mySubmissionStatuses');if(!box)return;box.innerHTML='';const items=readSubscriberQueue().filter(n=>n.number);if(!items.length)return;const heading=document.createElement('p');heading.style.cssText='font-weight:800;margin:14px 0 8px';heading.textContent='Статус ваших новостей';box.append(heading);items.slice(0,10).forEach(item=>{const notice=document.createElement('div');notice.className='status-notice';notice.style.marginBottom='8px';const statusText=item.status==='accepted'?'принята редакцией':item.status==='rejected'?'отклонена редакцией':'отправлена и ожидает рассмотрения';notice.textContent='Новость #'+item.number+' '+statusText+'.';box.append(notice);});}
+function showSubmissionStatus(){renderMySubmissionStatuses();}
+function fileAsDataURL(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve({name:file.name,type:file.type,data:reader.result});reader.onerror=reject;reader.readAsDataURL(file);});}
+document.getElementById('submitNewsForm').addEventListener('submit',async e=>{e.preventDefault();const text=document.getElementById('submitText').value.trim();const files=[...document.getElementById('submitMedia').files];if(!text&&!files.length){document.getElementById('submitStatus').textContent='Напишите сообщение или добавьте фото/видео.';return;}const statusEl=document.getElementById('submitStatus');statusEl.textContent='Сохраняем материал и вложения…';try{const media=await Promise.all(files.map(fileAsDataURL));const id='sub_'+Date.now().toString(36);const items=readSubscriberQueue();const maxNumber=items.reduce((max,n)=>Math.max(max,Number(n.number)||0),1237);const number=maxNumber+1;items.unshift({id,number,text,media,created:new Date().toLocaleString('ru-RU'),status:'pending'});if(!saveSubscriberQueue(items)){statusEl.textContent='Не удалось сохранить материал: возможно, файлы слишком большие. Попробуйте отправить фото/видео меньшего размера.';return;}statusEl.textContent='Новость #'+number+' отправлена';renderMySubmissionStatuses();document.getElementById('submitText').value='';document.getElementById('submitMedia').value='';document.getElementById('submitPreview').innerHTML='';}catch(err){statusEl.textContent='Не удалось прочитать вложения. Попробуйте выбрать файлы ещё раз.';}});
+showSubmissionStatus();
+
+const ADMIN_KEY = 'reallvoronezhadmin67';
+const ADMIN_PASSWORD = '6718';
+const adminPanel = document.getElementById('adminPanel');
+const adminLogin = document.getElementById('adminLogin');
+const adminStatus = document.getElementById('adminStatus');
+function showAdminLogin(){ adminLogin.classList.add('open'); adminPanel.classList.remove('open'); adminLogin.scrollIntoView({behavior:'smooth',block:'center'}); document.getElementById('adminPassword').focus({preventScroll:true}); }
+document.getElementById('adminFooterBtn').addEventListener('click',showAdminLogin);
+function showAdmin(){ adminLogin.classList.remove('open'); adminPanel.classList.add('open'); adminPanel.scrollIntoView({behavior:'smooth',block:'start'}); renderAdminList(); renderSubscriberQueue(); }
+const adminPath = decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g,'');
+const adminHost = location.hostname.split('.')[0];
+if (location.hostname === ADMIN_KEY || adminHost === ADMIN_KEY || adminPath === ADMIN_KEY || new URLSearchParams(location.search).get('admin') === ADMIN_KEY) showAdminLogin();
+document.getElementById('adminLoginForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ if(document.getElementById('adminPassword').value === ADMIN_PASSWORD){document.getElementById('loginError').textContent='';showAdmin();}
+ else {document.getElementById('loginError').textContent='Неверный пароль.';document.getElementById('adminPassword').value='';}
+});
+let customNews = [];
+try { customNews = JSON.parse(localStorage.getItem('rv_custom_news') || '[]'); } catch(e) { customNews = []; }
+let photoData = '';
+document.getElementById('newsPhoto').addEventListener('change', e=>{
+ const file=e.target.files && e.target.files[0];
+ if(!file){photoData='';return;}
+ if(!file.type.startsWith('image/')){adminStatus.textContent='Выберите файл изображения.';e.target.value='';return;}
+ if(file.size>2*1024*1024){adminStatus.textContent='Фото больше 2 МБ. Выберите файл поменьше.';e.target.value='';return;}
+ const reader=new FileReader();
+ reader.onload=()=>{photoData=reader.result;const img=document.getElementById('photoPreview');img.src=photoData;img.style.display='block';};
+ reader.readAsDataURL(file);
+});
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function persistCustom(){try{localStorage.setItem('rv_custom_news',JSON.stringify(customNews));return true;}catch(e){adminStatus.textContent='Не удалось сохранить данные. Возможно, фото слишком большое.';return false;}}
+function renderAdminList(){
+ const list=document.getElementById('adminList');
+ list.innerHTML='';
+ customNews.forEach(item=>{
+  const row=document.createElement('div');row.className='admin-row';
+  const title=document.createElement('strong');title.textContent=item.title;
+  const actions=document.createElement('div');
+  const edit=document.createElement('button');edit.textContent='Редактировать';edit.onclick=()=>editNews(item.id);
+  const del=document.createElement('button');del.textContent='Удалить';del.onclick=()=>{if(confirm('Удалить новость «'+item.title+'»?')){customNews=customNews.filter(n=>n.id!==item.id);persistCustom();renderCustomCards();renderAdminList();}};
+  actions.append(edit,del);row.append(title,actions);list.append(row);
+ });
+ if(!customNews.length)list.innerHTML='<p>Пока нет добавленных новостей.</p>';
+}
+function clearEditor(){
+ document.getElementById('adminForm').reset();document.getElementById('editId').value='';photoData='';
+ const img=document.getElementById('photoPreview');img.style.display='none';img.removeAttribute('src');
+ document.getElementById('saveNews').textContent='Сохранить новость';
+}
+document.getElementById('clearEditor').addEventListener('click',clearEditor);
+function editNews(id){
+ const item=customNews.find(n=>n.id===id);if(!item)return;
+ document.getElementById('editId').value=item.id;
+ document.getElementById('newsTitle').value=item.title;
+ document.getElementById('newsCategory').value=item.category;
+ document.getElementById('newsTime').value=item.time||'Сегодня';
+ document.getElementById('newsSummary').value=item.summary;
+ photoData=item.photo||'';
+ const img=document.getElementById('photoPreview');if(photoData){img.src=photoData;img.style.display='block';}else{img.style.display='none';}
+ document.getElementById('saveNews').textContent='Сохранить изменения';
+ document.getElementById('adminForm').scrollIntoView({behavior:'smooth',block:'center'});
+}
+document.getElementById('adminForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const id=document.getElementById('editId').value||('news_'+Date.now());
+ const old=customNews.find(n=>n.id===id);
+ const item={id,title:document.getElementById('newsTitle').value.trim(),category:document.getElementById('newsCategory').value,time:document.getElementById('newsTime').value.trim()||'Сегодня',summary:document.getElementById('newsSummary').value.trim(),body:document.getElementById('newsSummary').value.trim(),photo:photoData||((old && !document.getElementById('newsPhoto').value) ? old.photo : '')};
+ if(old)customNews=customNews.map(n=>n.id===id?item:n);else customNews.unshift(item);
+ if(persistCustom()){adminStatus.textContent='Новость сохранена.';clearEditor();renderCustomCards();renderAdminList();}
+});
+
+const subscriberQueue=document.getElementById('subscriberQueue');
+document.getElementById('manageNewsTab').addEventListener('click',()=>{subscriberQueue.classList.remove('open');document.getElementById('adminList').style.display='grid';document.getElementById('adminForm').style.display='grid';document.getElementById('manageNewsTab').classList.add('active');document.getElementById('subscriberNewsTab').classList.remove('active');});
+document.getElementById('subscriberNewsTab').addEventListener('click',()=>{subscriberQueue.classList.add('open');document.getElementById('adminList').style.display='none';document.getElementById('adminForm').style.display='none';document.getElementById('subscriberNewsTab').classList.add('active');document.getElementById('manageNewsTab').classList.remove('active');renderSubscriberQueue();});
+function renderSubscriberQueue(){const items=readSubscriberQueue();const pending=items.filter(n=>n.status==='pending').length;document.getElementById('pendingCount').textContent=pending?'('+pending+')':'';const box=document.getElementById('subscriberList');box.innerHTML='';if(!items.length){box.innerHTML='<p>Пока нет новостей от подписчиков.</p>';return;}items.forEach(item=>{const card=document.createElement('article');card.className='subscriber-item';const title=document.createElement('strong');title.textContent=(item.number?'Новость #'+item.number+' · ':'Материал от подписчика · ')+item.created;const status=document.createElement('p');status.textContent='Статус: '+({pending:'На рассмотрении',accepted:'Принята',rejected:'Отклонена'}[item.status]||item.status);const details=document.createElement('div');details.className='subscriber-details';details.style.display='none';details.style.marginTop='12px';const body=document.createElement('p');body.style.whiteSpace='pre-wrap';body.textContent=item.text||'Текст не добавлен';details.append(body);const mediaList=Array.isArray(item.media)?item.media:[];if(mediaList.length){const mediaHeading=document.createElement('p');mediaHeading.textContent='Фото и видео ('+mediaList.length+'): ';mediaHeading.style.fontWeight='800';details.append(mediaHeading);const mediaGrid=document.createElement('div');mediaGrid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px';mediaList.forEach(file=>{const wrap=document.createElement('div');wrap.style.cssText='min-width:0;border:1px solid #e1e4e8;border-radius:8px;padding:8px;overflow:hidden';if(file.data&&file.type&&file.type.startsWith('image/')){const img=document.createElement('img');img.src=file.data;img.alt=file.name||'Фото подписчика';img.style.cssText='display:block;width:100%;max-height:320px;object-fit:contain;border-radius:6px';wrap.append(img);}else if(file.data&&file.type&&file.type.startsWith('video/')){const video=document.createElement('video');video.src=file.data;video.controls=true;video.style.cssText='display:block;width:100%;max-height:320px;border-radius:6px';wrap.append(video);}else{const unavailable=document.createElement('p');unavailable.textContent='Предпросмотр недоступен для этого ранее отправленного файла.';wrap.append(unavailable);}const filename=document.createElement('p');filename.textContent=file.name||'Вложение';filename.style.cssText='font-size:12px;overflow-wrap:anywhere;margin:7px 0 0';wrap.append(filename);mediaGrid.append(wrap);});details.append(mediaGrid);}else{const noMedia=document.createElement('p');noMedia.textContent='Без фото и видео.';details.append(noMedia);}const toggle=document.createElement('button');toggle.type='button';toggle.textContent='Открыть новость и вложения';toggle.style.cssText='margin-top:10px;border:0;border-radius:7px;padding:10px 12px;background:#e3e5ea;color:#17191d;font-weight:800;cursor:pointer';toggle.onclick=()=>{const open=details.style.display==='none';details.style.display=open?'block':'none';toggle.textContent=open?'Свернуть материал':'Открыть новость и вложения';};card.append(title,status,toggle,details);if(item.status==='pending'){const actions=document.createElement('div');actions.className='admin-actions';const yes=document.createElement('button');yes.className='accept';yes.textContent='Принять';yes.onclick=()=>{updateSubscriberStatus(item.id,'accepted')};const no=document.createElement('button');no.className='reject';no.textContent='Отклонить';no.onclick=()=>{updateSubscriberStatus(item.id,'rejected')};actions.append(yes,no);card.append(actions);}box.append(card);});}
+function updateSubscriberStatus(id,status){const items=readSubscriberQueue();const item=items.find(n=>n.id===id);if(!item)return;item.status=status;if(saveSubscriberQueue(items)){renderSubscriberQueue();adminStatus.textContent=status==='accepted'?'Новость принята.':'Новость отклонена.';renderMySubmissionStatuses();}}
+
+function renderCustomCards(){
+ const container=document.getElementById('cards');
+ container.querySelectorAll('[data-custom="true"]').forEach(el=>el.remove());
+ customNews.forEach(item=>{
+  const card=document.createElement('article');card.className='card story';card.dataset.custom='true';card.dataset.category=item.category;card.dataset.title=item.title;card.dataset.body=item.body;
+  const visual=document.createElement('div');visual.className='cardvisual';
+  if(item.photo){visual.style.background='none';const img=document.createElement('img');img.src=item.photo;img.alt=item.title;img.style.cssText='width:100%;height:100%;object-fit:cover';visual.append(img);}else{visual.classList.add('no-photo');visual.textContent='Без фото';}
+  const cat=document.createElement('span');cat.className='category';cat.textContent=item.category;
+  const title=document.createElement('h3');title.textContent=item.title;
+  const summary=document.createElement('p');summary.textContent=item.summary;
+  const meta=document.createElement('div');meta.className='meta';meta.textContent=item.time||'Сегодня';
+  card.append(visual,cat,title,summary,meta);
+  card.addEventListener('click',()=>{document.getElementById('modalCategory').textContent=item.category;document.getElementById('modalTitle').textContent=item.title;document.getElementById('modalBody').textContent=item.body;modal.classList.add('open');});
+  container.prepend(card);
+ });
+ updateCards();
+}
+document.getElementById('exportNews').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify(customNews,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='realny-voronezh-news.json';a.click();URL.revokeObjectURL(url);
+});
+renderCustomCards();
+renderAdminList();
+
+</script>
+</body>
+</html>
