@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Новости дня: главные события, технологии, мир, бизнес, культура и спорт." name="description"/>
+<title>Реальный Воронеж — новости дня</title>
+<style>
+:root{--ink:#17191f;--muted:#737782;--line:#e7e8ec;--paper:#fff;--soft:#f5f6f8;--accent:#e83945;--dark:#17191f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+.topline{background:var(--dark);color:#fff;font-size:12px}.topline .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 0}.live{color:#ff737b;font-weight:800;letter-spacing:.08em}
+header{border-bottom:1px solid var(--line);background:#fff}.brandrow{display:flex;align-items:center;justify-content:space-between;padding:22px 0 18px;gap:20px}.brand{font-size:34px;line-height:1;font-weight:950;letter-spacing:-2px}.brand span{color:var(--accent)}.tagline{color:var(--muted);font-size:12px;margin-top:5px}.search{display:flex;gap:8px;align-items:center}.search form{display:flex;gap:8px;align-items:center}.search input{width:220px;border:1px solid var(--line);border-radius:999px;padding:10px 15px;outline:none}.search input:focus{border-color:var(--accent)}.search button{border:0;border-radius:999px;background:var(--ink);color:#fff;padding:10px 15px;cursor:pointer}
+nav{display:flex;gap:26px;overflow-x:auto;white-space:nowrap;padding:0 0 14px;font-size:13px;font-weight:750}nav a{padding:5px 0;border-bottom:2px solid transparent}nav a:hover,nav a.active{border-color:var(--accent);color:var(--accent)}
+main{padding:28px 0 60px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:850;color:var(--accent)}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:0 0 16px}.sectionhead h2{font-size:18px;margin:0;letter-spacing:-.4px}.sectionhead span{font-size:12px;color:var(--muted)}
+.leadgrid{display:grid;grid-template-columns:1.45fr .8fr;gap:22px;margin-bottom:36px}.hero{position:relative;min-height:390px;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,#15263e,#425e7a 55%,#d5a57e);color:#fff;display:flex;align-items:flex-end;padding:30px}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 78%)}.hero-art{position:absolute;inset:0;opacity:.7;background:radial-gradient(ellipse at 70% 30%,rgba(255,220,172,.85),transparent 22%),linear-gradient(130deg,transparent 35%,rgba(255,255,255,.12) 35.3%,transparent 36%),linear-gradient(35deg,transparent 55%,rgba(255,255,255,.13) 55.4%,transparent 56%)}.hero-content{position:relative;max-width:620px}.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-1.5px;margin:10px 0 12px}.hero p{color:#e8ebf0;margin:0 0 18px;max-width:600px}.meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center}.hero .meta{color:#e0e4e9}.pill{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:850;background:var(--accent);color:#fff;border-radius:4px;padding:5px 8px}
+.sidelead{display:flex;flex-direction:column;gap:0}.sideitem{display:grid;grid-template-columns:104px 1fr;gap:14px;padding:0 0 16px;margin-bottom:16px;border-bottom:1px solid var(--line)}.sideitem:last-child{border-bottom:0;margin-bottom:0}.thumb{height:92px;border-radius:9px;background:linear-gradient(140deg,#a6b6c5,#354a63);position:relative;overflow:hidden}.thumb:after{content:"";position:absolute;inset:20% -10% -30% 35%;border-radius:50%;background:rgba(255,255,255,.22)}.thumb.t2{background:linear-gradient(140deg,#d6a45c,#7b4b2a)}.thumb.t3{background:linear-gradient(140deg,#7eb8a0,#205d5c)}.thumb.t4{background:linear-gradient(140deg,#9a8ac6,#433a69)}.sideitem h3{font-size:15px;line-height:1.3;margin:7px 0 8px;letter-spacing:-.2px}.sideitem .meta{font-size:11px}
+.contentgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card{border-bottom:1px solid var(--line);padding-bottom:18px;cursor:pointer}.cardvisual{height:155px;border-radius:12px;margin-bottom:13px;overflow:hidden;position:relative;background:linear-gradient(135deg,#b3c4d3,#4b6279)}.cardvisual[role="img"]{background-repeat:no-repeat}.cardvisual[role="img"]:before{content:"";position:absolute;width:65%;height:120%;left:22%;top:25%;border-radius:50% 50% 0 0;background:rgba(255,255,255,.23);transform:rotate(-18deg)}.cardvisual.v2{background:linear-gradient(135deg,#e6c38b,#a35d46)}.cardvisual.v3{background:linear-gradient(135deg,#9dc9b4,#35776e)}.cardvisual.v4{background:linear-gradient(135deg,#b5addc,#5d5591)}.cardvisual.v5{background:linear-gradient(135deg,#d2d5db,#606d7e)}.cardvisual.v6{background:linear-gradient(135deg,#f0a4a0,#9c3747)}.no-photo{display:flex;align-items:center;justify-content:center;background:#eef0f3!important;color:#737782;font-weight:800;font-size:18px;letter-spacing:.02em}.no-photo:before{display:none}.card h3{font-size:19px;line-height:1.25;letter-spacing:-.45px;margin:9px 0}.card p{font-size:13px;color:#5f636d;margin:0 0 12px}.card:hover h3{color:var(--accent)}.category{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:850;color:var(--accent)}
+.sidebar{border-left:1px solid var(--line);padding-left:24px}.trending-section{margin-bottom:26px}.trendlist{list-style:none;margin:0;padding:0;counter-reset:trend}.trendlist li{counter-increment:trend;padding:15px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:30px 1fr;gap:10px}.trendlist li:before{content:"0" counter(trend);font-size:20px;font-weight:900;color:#c6c8ce;letter-spacing:-1px}.trendlist h3{font-size:14px;line-height:1.35;margin:0 0 6px}.trendlist .meta{font-size:11px}.newsletter{background:var(--soft);border-radius:14px;padding:20px;margin-top:28px}.newsletter h3{margin:0 0 7px;font-size:19px;letter-spacing:-.5px}.newsletter p{font-size:12px;color:var(--muted);margin:0 0 14px}.newsletter input{width:100%;border:1px solid #dddfe5;background:#fff;border-radius:8px;padding:11px;margin-bottom:9px}.newsletter button{width:100%;border:0;border-radius:8px;background:var(--accent);color:#fff;padding:11px;font-weight:800;cursor:pointer}.newsletter small{display:block;color:#227a54;margin-top:9px}
+.latest{margin-top:36px}.latestrow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.latestrow h2{font-size:21px;margin:0}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:750;cursor:pointer}.filter.selected,.filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}.empty{display:none;color:var(--muted);padding:20px 0}
+footer{background:var(--dark);color:#fff;padding:30px 0}.footerrow{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footerbrand{font-size:24px;font-weight:950;letter-spacing:-1px}.footerbrand span{color:var(--accent)}footer p{font-size:12px;color:#b6bac4;margin:5px 0 0}.footerlinks{display:flex;gap:18px;color:#d7d9df;font-size:12px}.admin-footer-btn{border:1px solid #555b68;background:#242832;color:#fff;border-radius:9px;padding:10px 16px;font-weight:800;cursor:pointer}.admin-footer-btn:hover{background:#343946;border-color:#8b92a1}
+.modal{position:fixed;inset:0;background:rgba(10,12,17,.62);display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal.open{display:flex}.modalbox{background:#fff;max-width:650px;width:100%;border-radius:16px;padding:28px;max-height:85vh;overflow:auto;position:relative}.close{position:absolute;right:16px;top:12px;border:0;background:var(--soft);border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:20px}.modalbox h2{font-size:28px;line-height:1.15;letter-spacing:-.8px;margin:12px 35px 12px 0}.modalbox p{color:#565b65}.modalbox .meta{margin-bottom:18px}
+.submit-page{position:fixed;inset:0;background:#f5f6f8;z-index:30;display:none;overflow:auto;padding:24px 16px}.submit-page.open{display:block}.submit-inner{max-width:720px;margin:20px auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}.submit-inner h1{font-size:28px;margin:8px 0 20px}.submit-inner textarea{width:100%;min-height:180px;resize:vertical;border:1px solid #dfe1e6;border-radius:12px;padding:14px;font:inherit}.submit-tools{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.submit-tools label,.submit-tools button,.submit-send{border:0;border-radius:9px;padding:11px 15px;background:#eceef2;color:var(--ink);font-weight:750;cursor:pointer}.submit-tools input{max-width:100%}.submit-send{background:var(--accent);color:#fff}.submit-preview{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:13px}.submit-preview img,.submit-preview video{max-width:100%;max-height:240px;border-radius:10px}.submit-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.submit-close{border:0;border-radius:50%;width:40px;height:40px;font-size:24px;cursor:pointer;background:#eceef2}
+ 
+.admin-login{display:none;background:#f5f6f8;border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 24px}.admin-login.open{display:block}.admin-login h2{margin:0 0 8px}.admin-login p{font-size:13px;color:var(--muted)}.admin-login form{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.admin-login input{flex:1;min-width:180px;border:1px solid #dfe1e6;border-radius:8px;background:#fff;padding:12px;font:inherit}.admin-login button{border:0;border-radius:8px;padding:12px 18px;background:var(--ink);color:#fff;font-weight:800;cursor:pointer}.login-error{width:100%;color:#bd2430;font-size:13px}.admin-panel{display:none;background:#f5f6f8;border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 28px}.admin-panel.open{display:block}.admin-panel h2{margin:0 0 8px}.admin-panel p{font-size:13px;color:var(--muted)}.admin-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.admin-form input,.admin-form textarea,.admin-form select{width:100%;border:1px solid #dfe1e6;border-radius:8px;background:white;padding:11px;font:inherit}.admin-form textarea{min-height:90px;resize:vertical;grid-column:1/-1}.admin-form .wide{grid-column:1/-1}.admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.admin-actions button{border:0;border-radius:8px;padding:10px 14px;background:var(--ink);color:white;font-weight:800;cursor:pointer}.admin-actions .secondary{background:#e3e5ea;color:var(--ink)}.admin-list{margin-top:18px;display:grid;gap:8px}.admin-row{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px;display:flex;justify-content:space-between;align-items:center;gap:12px}.admin-row button{border:0;background:#eceef2;border-radius:6px;padding:7px 10px;cursor:pointer}.admin-preview{max-width:140px;max-height:90px;border-radius:8px;object-fit:cover}.admin-status{font-size:12px;color:#227a54;margin-top:8px}.admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.admin-tabs button{border:1px solid #dfe1e6;border-radius:9px;background:#fff;padding:10px 13px;font-weight:800;cursor:pointer}.admin-tabs button.active{background:var(--ink);color:#fff}.subscriber-box{display:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}.subscriber-box.open{display:block}.subscriber-item{border:1px solid var(--line);border-radius:10px;padding:14px;margin:10px 0}.subscriber-item p{white-space:pre-wrap;overflow-wrap:anywhere}.subscriber-item .accept{background:#18794e;color:#fff}.subscriber-item .reject{background:#b42332;color:#fff}.status-notice{padding:12px;border-radius:9px;background:#eef6ff;color:#164e87;margin-top:12px}
+
+.category-page{position:fixed;inset:0;z-index:20;background:#fff;display:none;overflow:auto;padding:0 0 40px}.category-page.open{display:block}.category-page-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:1;padding:16px max(12px,calc((100vw - 1180px)/2));display:flex;align-items:center;gap:16px}.back-button{border:0;border-radius:9px;background:var(--ink);color:#fff;padding:10px 16px;font-weight:800;cursor:pointer;white-space:nowrap}.category-page-title{font-size:24px;font-weight:900;letter-spacing:-.6px;margin:0}.category-page-content{width:min(1180px,calc(100% - 36px));margin:24px auto}.category-page-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.category-page-empty{padding:28px 0;color:var(--muted);font-size:17px}.category-page .card{cursor:pointer}
+@media(max-width:800px){.leadgrid,.contentgrid{grid-template-columns:1fr}.hero{min-height:360px}.sidelead{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.sideitem{grid-template-columns:88px 1fr;margin:0}.thumb{height:82px}.contentgrid{gap:30px}.sidebar{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px}.trendlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}}
+@media(max-width:640px){.category-page-head{padding:12px;gap:12px}.category-page-title{font-size:20px}.category-page-content{width:calc(100% - 24px)}.category-page-cards{grid-template-columns:1fr}.back-button{padding:10px 12px}
+.admin-login,.admin-panel{padding:14px;border-radius:12px}.admin-login form{display:grid;grid-template-columns:1fr}.admin-login input,.admin-login button{width:100%;min-width:0}.admin-form{grid-template-columns:minmax(0,1fr)}.admin-form textarea,.admin-form .wide{grid-column:1}.admin-form label{min-width:0;overflow-wrap:anywhere}.admin-form input[type=file]{font-size:13px;padding:8px}.admin-actions{display:grid;grid-template-columns:1fr}.admin-actions button{width:100%;padding:12px}.admin-row{align-items:stretch;flex-direction:column}.admin-row>div:last-child{display:flex;flex-wrap:wrap;gap:8px}.admin-row button{padding:10px 12px}.admin-preview{max-width:100%;height:auto}.sectionhead{gap:10px;align-items:flex-start;flex-wrap:wrap}}
+@media(max-width:540px){.wrap{width:min(100% - 24px,1180px)}.topline .wrap{font-size:10px}.brandrow{padding:18px 0 14px;align-items:flex-start}.brand{font-size:29px}.tagline{max-width:180px}.search input{width:120px}.search button{display:none}nav{gap:19px;font-size:12px}.hero{padding:22px;min-height:365px}.hero h1{font-size:30px}.sidelead{grid-template-columns:1fr}.sideitem{grid-template-columns:96px 1fr}.thumb{height:84px}.cards{grid-template-columns:1fr;gap:20px}.cardvisual{height:190px}.trendlist{grid-template-columns:1fr}.latestrow{align-items:flex-start;flex-direction:column}.footerlinks{flex-wrap:wrap}}
+
+
+nav .admin-top-btn{margin-left:auto;border:1px solid var(--line);border-radius:8px;background:#f1f2f5;color:var(--ink);padding:8px 12px;font:inherit;font-weight:800;cursor:pointer}nav .admin-top-btn:hover{background:#e2e5eb}@media(max-width:600px){nav .admin-top-btn{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="topline"><div class="wrap"><span><span class="live">● LIVE</span> Главное за день</span><span id="today"></span></div></div>
+<header><div class="wrap">
+<div class="brandrow"><div><a class="brand" href="https://reallvoronezh">Реальный Воронеж<span>.</span></a><div class="tagline">Новости, которые держат в курсе</div><div class="tagline"><a href="https://reallvoronezh" rel="noopener" target="_blank">https://reallvoronezh</a></div></div>
+<div class="search"><form id="searchForm"><input aria-label="Поиск новостей" id="searchInput" placeholder="Найти новость…"/><button type="submit">Поиск</button></form></div>
+</div>
+<nav id="nav"><a class="active" data-filter="Все" href="#">Главное</a><a data-filter="Мир" href="#">Мир</a><a data-filter="Технологии" href="#">Технологии</a><a data-filter="Бизнес" href="#">Бизнес</a><a data-filter="Наука" href="#">Наука</a><a data-filter="Культура" href="#">Культура</a><a data-filter="Спорт" href="#">Спорт</a><button id="adminTopBtn" type="button" class="admin-top-btn">Админ</button></nav>
+</div></header>
+<main class="wrap">
+<section class="admin-login" id="adminLogin">
+<h2>Вход в панель администратора</h2>
+<p>Введите пароль для управления новостями.</p>
+<form id="adminLoginForm">
+<input autocomplete="current-password" id="adminPassword" inputmode="numeric" placeholder="Пароль" required="" type="password"/>
+<button type="submit">Войти</button>
+<div aria-live="polite" class="login-error" id="loginError"></div>
+</form>
+</section>
+<section class="admin-panel" id="adminPanel">
+<div class="sectionhead"><h2>Панель администратора</h2><span>Управление публикациями</span></div>
+<p>Добавляйте и редактируйте новости, с фотографией или без неё, меняйте рубрики и загружайте фотографии. Изменения в этой демоверсии сохраняются в браузере на этом устройстве.</p>
+<form class="admin-form" id="adminForm">
+<input id="editId" type="hidden"/>
+<input class="wide" id="newsTitle" placeholder="Заголовок новости" required=""/>
+<select id="newsCategory"><option>Мир</option><option>Технологии</option><option>Бизнес</option><option>Наука</option><option>Культура</option><option>Спорт</option></select>
+<input id="newsTime" placeholder="Время публикации, например: Сегодня · 4 минуты"/>
+<textarea id="newsSummary" placeholder="Краткое описание" required=""></textarea>
+<label class="wide">Фото новости (необязательно — можно оставить пустым) <input accept="image/*" id="newsPhoto" type="file"/></label>
+<p class="wide" style="margin:0;color:#737782;font-size:12px">Если фото не выбрано, новость опубликуется с надписью «Без фото».</p><img alt="Предпросмотр фото" class="admin-preview" id="photoPreview" style="display:none"/>
+<div class="wide admin-actions"><button id="saveNews" type="submit">Сохранить новость</button><button class="secondary" id="clearEditor" type="button">Очистить форму</button><button class="secondary" id="exportNews" type="button">Экспорт новостей (JSON)</button></div>
+</form>
+<div class="admin-tabs"><button class="active" id="manageNewsTab" type="button">Мои новости</button><button id="subscriberNewsTab" type="button">Новости от подписчиков <span id="pendingCount"></span></button></div>
+<div aria-live="polite" class="admin-status" id="adminStatus"></div>
+<div class="admin-list" id="adminList"></div>
+<section aria-live="polite" class="subscriber-box" id="subscriberQueue"><h3>Новости от подписчиков</h3><p>Здесь отображаются отправленные материалы, сохранённые в этом браузере.</p><div id="subscriberList"></div></section>
+</section>
+<div class="sectionhead"><h2>В центре внимания</h2><span>Подборка редакции</span></div>
+<section class="leadgrid">
+
+<div class="sidelead">
+
+
+
+
+</div>
+</section>
+<section class="contentgrid">
+<div>
+<div class="sectionhead"><h2>Свежие материалы</h2><span id="resultCount">0 публикаций</span></div>
+<div class="cards" id="cards">
+<article class="card story" data-news-id="editorial_1" data-category="Безопасность" data-title="Полный отбой воздушной опасности объявили в Воронежской области" data-body="Утром 17 октября в регионе сообщили об отмене режима воздушной опасности. Во время подобных предупреждений жителям рекомендуется следить за сообщениями официальных служб и выполнять их указания. После отбоя важно ориентироваться на актуальную информацию властей: ситуация может меняться, поэтому не стоит полагаться на старые публикации или неподтверждённые сообщения в социальных сетях. Иллюстрация показывает городской информационный баннер о воздушной опасности; она не является фотографией именно события 17 октября." data-url="https://voronezhnews.ru/fn_1972241.html"><div class="cardvisual" style="background-image:url('https://region.center/source/Voronezh/shablon/5440561475186983012.jpg');background-size:cover;background-position:center" role="img" aria-label="Иллюстративный городской баннер о воздушной опасности"></div><span class="category">Безопасность</span><h3>Полный отбой воздушной опасности объявили в Воронежской области</h3><p>Утром 17 октября сообщили об отмене режима. Жителям советуют ориентироваться на официальные оповещения и не распространять непроверенные сообщения.</p><div class="meta">17 октября 2026 · 07:27 · Фото: иллюстрация</div></article>
+<article class="card story" data-news-id="editorial_2" data-category="Общество" data-title="Воронежские абитуриенты назвали главные критерии выбора профессии" data-body="По данным опроса, о котором 17 октября написали «Вести Воронеж», 36% опрошенных ориентировались на личный интерес, а 35% назвали главным фактором возможность найти работу после обучения. Перспективы трудоустройства учитывали ещё 27% участников. Высокий заработок был важен для 24%, гибкий график или удалённая работа — для 21%, а востребованность специальности — для 20%. Среди популярных направлений назывались IT и программирование, педагогика, инженерные и технические специальности. Эти цифры отражают ответы участников опроса, а не гарантируют трудоустройство по конкретной профессии." data-url="https://vestivrn.ru/news/2026/10/17/voronezhskie-abiturienty-nazvali-glavnye-kriterii-vybora-professii/"><div class="cardvisual" style="background-image:url('https://vestivrn.ru/i/0b/0bb00cf0290f74ab8cb0a59681cba110.jpg');background-size:cover;background-position:center" role="img" aria-label="Абитуриенты на образовательном мероприятии"></div><span class="category">Общество</span><h3>Воронежские абитуриенты назвали главные критерии выбора профессии</h3><p>В опросе 36% выбрали личный интерес, а 35% — возможность найти работу после учёбы. Среди востребованных направлений упоминались IT, педагогика и инженерные специальности.</p><div class="meta">17 октября 2026 · 08:04 · Фото: «Вести Воронеж»</div></article>
+<article class="card story" data-news-id="editorial_3" data-category="Погода" data-title="Воронеж встретит субботу мягкой осенней погодой" data-body="В прогнозе на субботу, 17 октября, ожидалась облачная погода с прояснениями и без существенных осадков. Днём температура могла подняться до +17…+19 градусов. Восточный ветер прогнозировался со скоростью 7–12 м/с, поэтому на открытых участках и на набережной могло ощущаться прохладнее. Прогноз — ориентир, а фактические условия могут отличаться в разных районах города; перед поездкой лучше свериться с актуальной метеосводкой." data-url="https://newsvoronezh.ru/society/2026/10/17/101060.html"><div class="cardvisual no-photo" role="img" aria-label="Без вложений">Без вложений</div><span class="category">Погода</span><h3>Воронеж встретит субботу мягкой осенней погодой</h3><p>В прогнозе на 17 октября — до +17…+19 градусов и без существенных осадков. Восточный ветер может усилить ощущение прохлады.</p><div class="meta">17 октября 2026 · 08:33</div></article>
+<article class="card story" data-news-id="editorial_4" data-category="Происшествия" data-title="Сообщение о происшествии с поездом требует уточнения деталей" data-body="В ранней версии ленты упоминалось происшествие с поездом и автомобилем, однако доступная ссылка вела лишь на общий архив и не позволяла подтвердить обстоятельства, место и задержку движения. Поэтому редакция не добавляет неподтверждённых деталей. Перед публикацией этой заметки необходимо сверить её с конкретным сообщением перевозчика или регионального издания." data-url="https://news.bvf.ru/archive/"><div class="cardvisual no-photo" role="img" aria-label="Без вложений">Без вложений</div><span class="category">Происшествия</span><h3>Сообщение о происшествии с поездом требует уточнения деталей</h3><p>Сведения из предыдущей версии не удалось подтвердить по конкретной публикации. Подробности требуют проверки по первоисточнику.</p><div class="meta">17 октября 2026 · 09:31 · Требует проверки</div></article>
+<article class="card story" data-news-id="editorial_5" data-category="Город" data-title="Водовод, из-за которого район Воронежа остался без воды, отремонтировали ночью" data-body="В предыдущей версии ленты сообщалось о завершении ночного ремонта водовода. Однако ссылка на общий архив не подтверждает конкретный адрес, масштаб отключения и время восстановления подачи воды. Поэтому эти детали не следует считать окончательно проверенными. Если проблема затрагивает ваш дом, актуальную информацию о подаче воды лучше уточнить у водоканала или управляющей организации." data-url="https://news.bvf.ru/archive/"><div class="cardvisual no-photo" role="img" aria-label="Без вложений">Без вложений</div><span class="category">Город</span><h3>Водовод, из-за которого район Воронежа остался без воды, отремонтировали ночью</h3><p>В ленте сообщалось о завершении ремонта, но точные адреса и время восстановления требуют проверки по первоисточнику.</p><div class="meta">17 октября 2026 · 10:23 · Требует проверки</div></article>
+<article class="card story" data-news-id="editorial_6" data-category="Спорт" data-title="Воронежцы выступят на чемпионате и первенстве мира по панкратиону" data-body="В предыдущей ленте сообщалось об участии спортсменов из Воронежской области в чемпионате и первенстве мира по панкратиону. Панкратион — вид единоборств, сочетающий ударную технику и борьбу по правилам соревнований. При этом доступная ранее ссылка вела на общий архив, поэтому состав команды, место проведения и результаты выступлений требуют подтверждения конкретным источником. Результаты соревнований не добавлены, чтобы не выдавать предположения за факты." data-url="https://news.bvf.ru/archive/"><div class="cardvisual no-photo" role="img" aria-label="Без вложений">Без вложений</div><span class="category">Спорт</span><h3>Воронежцы выступят на чемпионате и первенстве мира по панкратиону</h3><p>Панкратион сочетает ударную технику и борьбу. Состав команды и результаты требуют подтверждения по конкретной публикации.</p><div class="meta">17 октября 2026 · 12:43 · Требует проверки</div></article>
+<article class="card story" data-news-id="editorial_7" data-category="Город" data-title="В Воронеже устраняют утечку воды на улице Любы Шевцовой" data-body="В региональной ленте сообщалось об устранении утечки на улице Любы Шевцовой в Советском районе. Коммунальные аварии на сетях холодного водоснабжения могут временно влиять на подачу воды ближайшим домам; после завершения работ службе необходимо проверить герметичность участка и восстановить штатный режим. Точный список затронутых адресов и время окончания работ нужно уточнять в сообщениях водоканала или управляющих организаций." data-url="https://now36.ru/category/proisshestviya"><div class="cardvisual no-photo" role="img" aria-label="Без вложений">Без вложений</div><span class="category">Город</span><h3>В Воронеже устраняют утечку воды на улице Любы Шевцовой</h3><p>Сообщалось об аварийных работах в Советском районе. Точные адреса и сроки восстановления водоснабжения стоит сверять с официальными сообщениями.</p><div class="meta">17 октября 2026 · 16:30</div></article>
+
+
+
+
+
+
+</div>
+<div class="empty" id="empty">Нет публикаций</div>
+<section class="latest"><div class="latestrow"><h2>Все темы</h2><div class="filters" id="filters"><button class="filter selected" data-filter="Все">Все</button></div></div></section>
+</div>
+<aside class="sidebar"><section class="newsletter" id="sendNews"><h3>Есть новость?</h3><p>Расскажите редакции, что произошло.</p><button id="sendNewsBtn" type="button">Прислать новость</button></section>
+</aside>
+</section>
+</main>
+<footer><div class="wrap footerrow"><div><a class="footerbrand" href="https://reallvoronezh">Реальный Воронеж<span>.</span></a><p>Новости без лишнего шума.</p></div><div class="footerlinks"><a href="#">О редакции</a><a href="#">Контакты</a><a href="#">Реклама</a><a href="https://reallvoronezh" rel="noopener" target="_blank">reallvoronezh</a><a href="#privacyPolicy" id="privacyLink">Политика конфиденциальности</a></div><p>© <span id="year"></span> Реальный Воронеж. Новостной сайт.</p></div></footer>
+<section id="privacyPolicy" class="privacy-policy" style="display:none;max-width:900px;margin:28px auto;padding:24px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;color:#252936;line-height:1.65"><button type="button" id="closePrivacy" style="float:right;padding:8px 12px;cursor:pointer">Закрыть</button><h1>Политика конфиденциальности</h1><p><strong>Дата обновления:</strong> 17 октября 2026 года.</p><h2>1. Общие положения</h2><p>Сайт «Реальный Воронеж» публикует информационные материалы. Эта политика описывает, какие данные могут обрабатываться при использовании сайта.</p><h2>2. Данные, которые обрабатываются</h2><p>Сайт может сохранять технические данные, необходимые для работы интерфейса. Поиск и выбор рубрик выполняются в браузере. В демонстрационной версии счётчики просмотров и редакторские изменения могут сохраняться в локальном хранилище браузера на вашем устройстве.</p><h2>3. Файлы cookie и локальное хранилище</h2><p>Текущая версия может использовать localStorage для запоминания просмотров и локальных публикаций. Эти данные не являются общей базой сайта и обычно доступны только в том браузере и на том устройстве, где они были сохранены.</p><h2>4. Сторонние ресурсы</h2><p>На страницах могут размещаться ссылки и изображения с внешних сайтов. При переходе по ссылкам или загрузке внешних изображений соответствующие сайты могут получать технические данные согласно собственным правилам конфиденциальности.</p><h2>5. Защита данных и контакты</h2><p>Не вводите в формы сайта пароли от других сервисов, платёжные данные или другую конфиденциальную информацию. Для вопросов о работе сайта используйте доступные контактные каналы редакции.</p></section>
+<section aria-label="Прислать новость" class="submit-page" id="submitPage"><div class="submit-inner"><div class="submit-top"><a class="brand" href="#">Реальный Воронеж<span>.</span></a><button aria-label="Закрыть" class="submit-close" id="submitClose" type="button">×</button></div><h1>Прислать новость</h1><div class="submit-unavailable" role="status" style="margin-top:24px;padding:22px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;text-align:center;font-size:20px;font-weight:700;color:#475569">Временно недоступно</div></div></section>
+<section aria-hidden="true" aria-label="Публикации категории" class="category-page" id="categoryPage"><div class="category-page-head"><button class="back-button" id="categoryBack" type="button">← Назад</button><h1 class="category-page-title" id="categoryPageTitle">Категория</h1></div><div class="category-page-content"><div class="category-page-cards" id="categoryPageCards"></div><p class="category-page-empty" id="categoryPageEmpty" style="display:none">Нет публикаций</p></div></section>
+<div aria-labelledby="modalTitle" aria-modal="true" class="modal" id="modal" role="dialog"><div class="modalbox"><button aria-label="Закрыть" class="close" id="closeModal">×</button><span class="category" id="modalCategory">Новости</span><h2 id="modalTitle"></h2><div class="meta">Реальный Воронеж · Материал редакции</div><p id="modalBody"></p></div></div>
+<script>
+
+const now = new Date();
+document.getElementById('today').textContent = new Intl.DateTimeFormat('ru-RU',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+document.getElementById('year').textContent = now.getFullYear();
+const stories = [...document.querySelectorAll('.story')];
+const cards = [...document.querySelectorAll('#cards .story')];
+cards.forEach(card=>card.addEventListener('click',()=>{recordStoryView(card);document.getElementById('modalCategory').textContent=card.dataset.category||'Новости';document.getElementById('modalTitle').textContent=card.dataset.title||card.querySelector('h3')?.textContent||'';document.getElementById('modalBody').textContent=card.dataset.body||card.querySelector('p')?.textContent||'';modal.classList.add('open');}));
+const searchInput = document.getElementById('searchInput');
+function readViews(){try{return JSON.parse(localStorage.getItem('rv_news_views')||'{}')}catch(e){return {}}}
+function saveViews(v){try{localStorage.setItem('rv_news_views',JSON.stringify(v))}catch(e){}}
+function storyKey(story){return String(story.dataset.newsId||story.dataset.title||story.querySelector('h3')?.textContent||'news').trim()}
+function recordStoryView(story){const views=readViews();const key=storyKey(story);views[key]=(Number(views[key])||0)+1;saveViews(views)}
+let activeCategory = 'Все';
+function updateCards(){
+  const q = searchInput.value.trim().toLocaleLowerCase('ru');
+  let count = 0;
+  cards.forEach(card=>{
+    const category = card.dataset.category;
+    const haystack = (card.dataset.title+' '+card.innerText).toLocaleLowerCase('ru');
+    const visible = (activeCategory==='Все'||category===activeCategory) && (!q||haystack.includes(q));
+    card.style.display = visible ? '' : 'none';
+    if(visible) count++;
+  });
+  document.getElementById('resultCount').textContent = count+' публикаций';
+  document.getElementById('empty').style.display = count ? 'none' : 'block';
+}
+const categoryPage=document.getElementById('categoryPage');
+const categoryPageCards=document.getElementById('categoryPageCards');
+function openCategoryPage(cat){
+  const title=document.getElementById('categoryPageTitle');
+  title.textContent=cat;
+  categoryPageCards.innerHTML='';
+  const matching=[...document.querySelectorAll('#cards .story')].filter(card=>card.dataset.category===cat);
+  matching.forEach(card=>{
+    const clone=card.cloneNode(true);
+    clone.style.display='';
+    clone.addEventListener('click',()=>{
+      recordStoryView(matching.find(card=>(card.dataset.title||card.querySelector('h3')?.textContent)===(clone.dataset.title||clone.querySelector('h3')?.textContent))||clone);
+      document.getElementById('modalCategory').textContent=clone.dataset.category||'Новости';
+      document.getElementById('modalTitle').textContent=clone.dataset.title||clone.querySelector('h3')?.textContent||'Новость';
+      document.getElementById('modalBody').textContent=clone.dataset.body||clone.querySelector('p')?.textContent||'Подробности этой публикации.';
+      modal.classList.add('open');
+    });
+    categoryPageCards.appendChild(clone);
+  });
+  document.getElementById('categoryPageEmpty').style.display=matching.length?'none':'block';
+  categoryPage.classList.add('open');
+  categoryPage.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  categoryPage.scrollTop=0;
+}
+function closeCategoryPage(){categoryPage.classList.remove('open');categoryPage.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+document.getElementById('categoryBack').addEventListener('click',closeCategoryPage);
+function setCategory(cat){
+  activeCategory=cat;
+  document.querySelectorAll('[data-filter]').forEach(el=>el.classList.toggle('active',el.closest('nav') && el.dataset.filter===cat));
+  document.querySelectorAll('#filters .filter').forEach(el=>el.classList.toggle('selected',el.dataset.filter===cat));
+  if(cat==='Все'){
+    closeCategoryPage();
+updateCards();
+  }else{
+    openCategoryPage(cat);
+  }
+}
+// Темы автоматически создаются по рубрикам существующих новостей.
+const filtersBox=document.getElementById('filters');
+if(filtersBox){const cats=[...new Set(cards.map(c=>(c.dataset.category||'Новости').trim()))].filter(Boolean).sort((a,b)=>a.localeCompare(b,'ru'));cats.forEach(cat=>{const b=document.createElement('button');b.type='button';b.className='filter';b.dataset.filter=cat;b.textContent=cat;filtersBox.appendChild(b);b.addEventListener('click',()=>setCategory(cat));});}
+const privacy=document.getElementById('privacyPolicy');
+document.getElementById('privacyLink')?.addEventListener('click',e=>{e.preventDefault();privacy.style.display='block';privacy.scrollIntoView({behavior:'smooth',block:'start'});});
+document.getElementById('closePrivacy')?.addEventListener('click',()=>{privacy.style.display='none';});
+document.querySelectorAll('nav [data-filter],#filters [data-filter]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();setCategory(el.dataset.filter);}));
+document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();updateCards();document.getElementById('cards').scrollIntoView({behavior:'smooth',block:'start'});});
+searchInput.addEventListener('input',updateCards);
+const modal=document.getElementById('modal');
+stories.forEach(story=>story.addEventListener('click',()=>{
+ recordStoryView(story);
+ document.getElementById('modalCategory').textContent=story.dataset.category||'Новости';
+ document.getElementById('modalTitle').textContent=story.dataset.title;
+ document.getElementById('modalBody').textContent=story.dataset.body||'Подробности этой темы можно добавить в панели управления сайтом.';
+ modal.classList.add('open');
+}));
+function closeModal(){modal.classList.remove('open')}
+document.getElementById('closeModal').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();if(categoryPage.classList.contains('open'))closeCategoryPage();}});
+const submitPage=document.getElementById('submitPage');
+document.getElementById('sendNewsBtn').addEventListener('click',()=>{submitPage.classList.add('open');document.body.style.overflow='hidden';renderMySubmissionStatuses();});
+function closeSubmitPage(){submitPage.classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitClose').addEventListener('click',closeSubmitPage);
+document.getElementById('submitMedia').addEventListener('change',e=>{const box=document.getElementById('submitPreview');box.innerHTML='';[...e.target.files].forEach(file=>{const url=URL.createObjectURL(file);let el;if(file.type.startsWith('image/')){el=document.createElement('img');el.alt=file.name;el.src=url;}else if(file.type.startsWith('video/')){el=document.createElement('video');el.src=url;el.controls=true;}else return;box.append(el);});});
+function readSubscriberQueue(){try{return JSON.parse(localStorage.getItem('rv_subscriber_news')||'[]')}catch(e){return []}}
+function saveSubscriberQueue(items){try{localStorage.setItem('rv_subscriber_news',JSON.stringify(items));return true}catch(e){return false}}
+function renderMySubmissionStatuses(){const box=document.getElementById('mySubmissionStatuses');if(!box)return;box.innerHTML='';const items=readSubscriberQueue().filter(n=>n.number);if(!items.length)return;const heading=document.createElement('p');heading.style.cssText='font-weight:800;margin:14px 0 8px';heading.textContent='Статус ваших новостей';box.append(heading);items.slice(0,10).forEach(item=>{const notice=document.createElement('div');notice.className='status-notice';notice.style.marginBottom='8px';const statusText=item.status==='accepted'?'принята редакцией':item.status==='rejected'?'отклонена редакцией':'отправлена и ожидает рассмотрения';notice.textContent='Новость #'+item.number+' '+statusText+'.';box.append(notice);});}
+function showSubmissionStatus(){renderMySubmissionStatuses();}
+function fileAsDataURL(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve({name:file.name,type:file.type,data:reader.result});reader.onerror=reject;reader.readAsDataURL(file);});}
+const submitNewsForm = document.getElementById('submitNewsForm');
+if (submitNewsForm) submitNewsForm.addEventListener('submit',async e=>{e.preventDefault();const text=document.getElementById('submitText').value.trim();const files=[...document.getElementById('submitMedia').files];if(!text&&!files.length){document.getElementById('submitStatus').textContent='Напишите сообщение или добавьте фото/видео.';return;}const statusEl=document.getElementById('submitStatus');statusEl.textContent='Сохраняем материал и вложения…';try{const media=await Promise.all(files.map(fileAsDataURL));const id='sub_'+Date.now().toString(36);const items=readSubscriberQueue();const maxNumber=items.reduce((max,n)=>Math.max(max,Number(n.number)||0),1237);const number=maxNumber+1;items.unshift({id,number,text,media,created:new Date().toLocaleString('ru-RU'),status:'pending'});if(!saveSubscriberQueue(items)){statusEl.textContent='Не удалось сохранить материал: возможно, файлы слишком большие. Попробуйте отправить фото/видео меньшего размера.';return;}statusEl.textContent='Новость #'+number+' отправлена';renderMySubmissionStatuses();document.getElementById('submitText').value='';document.getElementById('submitMedia').value='';document.getElementById('submitPreview').innerHTML='';}catch(err){statusEl.textContent='Не удалось прочитать вложения. Попробуйте выбрать файлы ещё раз.';}});
+showSubmissionStatus();
+
+const ADMIN_KEY = 'reallvoronezhadmin67';
+const ADMIN_PASSWORD = '6718';
+const adminPanel = document.getElementById('adminPanel');
+const adminLogin = document.getElementById('adminLogin');
+const adminStatus = document.getElementById('adminStatus');
+function showAdminLogin(){ adminLogin.classList.add('open'); adminPanel.classList.remove('open'); adminLogin.scrollIntoView({behavior:'smooth',block:'center'}); document.getElementById('adminPassword').focus({preventScroll:true}); }
+const adminTopBtn=document.getElementById('adminTopBtn'); if(adminTopBtn) adminTopBtn.addEventListener('click',showAdminLogin);
+function showAdmin(){ adminLogin.classList.remove('open'); adminPanel.classList.add('open'); adminPanel.scrollIntoView({behavior:'smooth',block:'start'}); renderAdminList(); renderSubscriberQueue(); }
+const adminPath = decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g,'');
+const adminHost = location.hostname.split('.')[0];
+if (location.hostname === ADMIN_KEY || adminHost === ADMIN_KEY || adminPath === ADMIN_KEY || new URLSearchParams(location.search).get('admin') === ADMIN_KEY) showAdminLogin();
+document.getElementById('adminLoginForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ if(document.getElementById('adminPassword').value === ADMIN_PASSWORD){document.getElementById('loginError').textContent='';showAdmin();}
+ else {document.getElementById('loginError').textContent='Неверный пароль.';document.getElementById('adminPassword').value='';}
+});
+if (localStorage.getItem('rv_clear_seed_news_v1') !== 'done') { localStorage.removeItem('rv_custom_news'); localStorage.setItem('rv_clear_seed_news_v1', 'done'); }
+let customNews = [];
+try { customNews = JSON.parse(localStorage.getItem('rv_custom_news') || '[]'); } catch(e) { customNews = []; }
+// Стартовая редакционная подборка. Новости кратко пересказаны по указанным источникам на 17 октября 2026 года.
+if (!customNews.length) {
+ customNews = [
+  {id:'rv-20261017-1',title:'Воронежский промышленный форум посвятят искусственному интеллекту',category:'Технологии',time:'17 октября 2026 · 10:18',summary:'Тема искусственного интеллекта станет центральной на промышленном форуме в Воронежской области.',body:'По сообщению из архива новостей «Воронеж Сейчас», промышленный форум в 2026 году посвятят теме искусственного интеллекта. Подробности и программа: https://now36.ru/news/archive',photo:''},
+  {id:'rv-20261017-2',title:'В Семилукской районной больнице начала работать молодой врач',category:'Общество',time:'17 октября 2026 · 11:42',summary:'В районную больницу пришёл работать молодой специалист Кристина Горельченко.',body:'В ленте «Воронеж Сейчас» сообщается, что в Семилукской районной больнице начала работать молодой врач Кристина Горельченко. Источник: https://now36.ru/news/archive',photo:''},
+  {id:'rv-20261017-3',title:'В Каширском районе завершили благоустройство парка Победы',category:'Город',time:'17 октября 2026 · 11:42',summary:'В районе завершили работы в парке Победы и открыли Аллею памяти.',body:'По данным региональной новостной ленты, в Каширском районе завершили благоустройство парка Победы и открыли Аллею памяти. Источник: https://now36.ru/news/archive',photo:''},
+  {id:'rv-20261017-4',title:'В Воронеже устраняют утечку воды на улице Любы Шевцовой',category:'Город',time:'17 октября 2026 · 13:16',summary:'Коммунальные службы работают над устранением утечки воды на улице Любы Шевцовой.',body:'О работах по устранению утечки воды на улице Любы Шевцовой сообщила лента «Воронеж Сейчас». Актуальные подробности: https://now36.ru/news/archive',photo:''},
+  {id:'rv-20261017-5',title:'Отопление появилось в части домов Воронежа',category:'Город',time:'17 октября 2026 · 14:05',summary:'В региональной новостной сводке сообщалось, что отопление появилось в 18% домов Воронежа.',body:'По данным сводки «Вести Воронеж» за 17 октября, отопление появилось в 18% домов. Доля могла измениться после публикации; проверяйте свежие сообщения коммунальных служб. Источник: https://vestivrn.ru/news/2026/10/17/',photo:''},
+  {id:'rv-20261017-6',title:'Воронежские абитуриенты рассказали, что важно при выборе профессии',category:'Общество',time:'17 октября 2026 · 08:04',summary:'Для трети опрошенных главным критерием стала возможность найти работу после окончания учёбы.',body:'В публикации «Вести Воронеж» приводятся результаты опроса абитуриентов: для трети респондентов важнее всего возможность трудоустройства после учёбы. Источник: https://vestivrn.ru/news/2026/10/17/',photo:''}
+ ];
+ try { localStorage.setItem('rv_custom_news', JSON.stringify(customNews)); } catch(e) {}
+}
+// Дополнительные свежие материалы из региональных новостных лент на 17 октября 2026 года.
+// Время в карточках распределено в диапазоне 07:27–16:30; оно используется как отображаемое время публикации на сайте.
+const freshEditorialNews = [
+ {id:'rv-20261017-fakel-win',title:'«Факел» впервые обыграл «Крылья Советов» на выезде',category:'Спорт',time:'17 октября 2026 · 17:54',summary:'Воронежский футбольный клуб добился исторической для команды победы в гостевом матче с «Крыльями Советов».',body:'По сообщению «Блокнота Воронеж», «Факел» впервые в истории клуба одолел «Крылья Советов» на выезде. Это заметное событие для болельщиков команды. Подробности матча и статистика доступны в первоисточнике.',photo:'',source:'https://bloknot-voronezh.ru/news/novosti-za-nedelyu/'},
+ {id:'rv-20261017-park-kashira',title:'В Каширском районе открыли обновлённый парк Победы',category:'Благоустройство',time:'17 октября 2026 · 18:07',summary:'В районе завершили благоустройство парка Победы и открыли Аллею памяти.',body:'По данным архива «Воронеж Сейчас», в Каширском районе завершили благоустройство парка Победы и открыли Аллею памяти. Обновлённое общественное пространство посвящено сохранению памяти и должно стать местом для прогулок жителей. Подробности — в первоисточнике.',photo:'',source:'https://now36.ru/news/archive'},
+ {id:'rv-20261017-water-leak',title:'В Воронеже устраняют утечку воды на улице Любы Шевцовой',category:'Город',time:'17 октября 2026 · 17:29',summary:'В городской новостной ленте сообщили о работах по устранению утечки воды на улице Любы Шевцовой.',body:'В архиве новостей «Воронеж Сейчас» за 17 октября опубликована информация об устранении утечки воды на улице Любы Шевцовой. Сроки завершения работ и возможные ограничения лучше уточнять по сообщениям городских коммунальных служб.',photo:'',source:'https://now36.ru/news/archive'},
+ {id:'rv-20261017-teachers-forum',title:'В Воронеже форум «Инвестиции в будущее» собрал более 300 педагогов',category:'Образование',time:'17 октября 2026 · 16:56',summary:'В образовательном форуме приняли участие более 300 педагогов.',body:'По данным регионального новостного архива, в Воронеже прошёл форум «Инвестиции в будущее», который собрал более 300 педагогов. Такие встречи посвящены обмену опытом и обсуждению развития образования. Подробности опубликованы в источнике.',photo:'',source:'https://now36.ru/news/archive'},
+ {id:'rv-20261017-profession',title:'Воронежские абитуриенты назвали важные критерии выбора профессии',category:'Образование',time:'17 октября 2026 · 07:34',summary:'Для трети опрошенных главным фактором стала возможность найти работу после окончания учёбы.',body:'«Вести Воронеж» сообщили об опросе абитуриентов, посвящённом выбору будущей профессии. Для трети участников наиболее важным критерием оказалась возможность трудоустройства после учёбы. Это подчёркивает, насколько перспективы работы влияют на образовательный выбор.',photo:'',source:'https://vestivrn.ru/news/2026/10/17/'},
+ {id:'rv-20261017-weather-nextweek',title:'Начало следующей недели будет сухим и прохладным в Воронежской области',category:'Погода',time:'17 октября 2026 · 18:00',summary:'В понедельник и вторник существенных осадков не ожидается. Днём в регионе будет до +16…+21°, затем начнётся постепенное похолодание.',body:'В ночь на понедельник, 19 октября, столбики термометров покажут +7…+12 градусов по области и +9…+11 в Воронеже. Днём температура воздуха поднимется до +16…+21 градуса в регионе и +15…+18 в областном центре. Ожидается облачность с прояснениями.\n\nВ ночь на вторник, 20 октября, похолодает до +5…+10 градусов по области и +8…+10 в Воронеже. Днём температура составит +14…+19 градусов в регионе и +14…+16 в городе.\n\nПо предварительным прогнозам, существенных осадков не ожидается и в среду, 21 октября. При этом постепенное похолодание продолжится, особенно заметное в ночные часы.',photo:'',source:''},
+ {id:'rv-20261017-telegram-13896',title:'Федерация водных видов спорта России опубликовала новый материал',category:'Спорт',time:'17 октября 2026 · 17:58',summary:'Новая публикация официального Telegram-канала Федерации водных видов спорта России. Откройте первоисточник, чтобы прочитать полный текст и посмотреть прикреплённые материалы.',body:'Официальный Telegram-канал Федерации водных видов спорта России опубликовал материал. Текст конкретной публикации не удалось получить напрямую, поэтому подробности не пересказываются, чтобы не добавлять неподтверждённые сведения. Полный текст и возможные фотографии доступны в первоисточнике.',photo:'https://s15.stc.yc.kpcdn.net/share/i/12/15541521/wr-420.webp',source:'https://t.me/rus_aquatics/13896'},
+ {id:'rv-20261017-14',title:'Борисоглебскую районную больницу оштрафовали из-за диспансеризаций',category:'Здоровье',time:'17 октября 2026 · 08:27',summary:'По сообщению «Вести Воронеж», больницу уличили в оформлении липовых диспансеризаций. К учреждению применили штрафные санкции.',body:'В архиве «Вести Воронеж» за 17 октября опубликован материал о Борисоглебской районной больнице и оформлении липовых диспансеризаций. В публикации говорится о применённых к учреждению штрафных санкциях. Подробности и обновления читайте в первоисточнике.',photo:'',source:'https://vestivrn.ru/news/2026/10/17/'},
+ {id:'rv-20261017-15',title:'В Воронеже обсуждают промышленный форум об искусственном интеллекте',category:'Технологии',time:'17 октября 2026 · 12:51',summary:'Региональный новостной архив сообщает, что промышленный форум 2026 года посвятят теме искусственного интеллекта.',body:'По данным архива «Воронеж Сейчас», в 2026 году промышленный форум в Воронежской области будет посвящён искусственному интеллекту. Это направление всё активнее обсуждается в промышленности — от автоматизации процессов до анализа данных. Программа и подробности могут уточняться организаторами.',photo:'',source:'https://now36.ru/news/archive'},
+ {id:'rv-20261017-16',title:'В Нововоронеже школьникам рассказали, как превратить идею в проект',category:'Общество',time:'17 октября 2026 · 13:24',summary:'В ленте «Вести Воронеж» среди новостей дня отмечено занятие для жителей Нововоронежа о развитии собственных идей и проектов.',body:'В новостной подборке «Вести Воронеж» за 17 октября упоминается мероприятие в Нововоронеже, посвящённое превращению идей в реальные проекты. Такие занятия помогают участникам разобраться, как сформулировать инициативу и перейти от замысла к плану действий. За подробностями обратитесь к публикации источника.',photo:'',source:'https://vestivrn.ru/news/2026/10/17/'},
+
+ {id:'rv-20261017-7',title:'Ночью в Воронежской области отменили воздушную опасность',category:'Происшествия',time:'17 октября 2026 · 07:27',summary:'Утром в регионе объявили полный отбой воздушной опасности. Ранее сообщалось об отмене непосредственной и общей угрозы беспилотников.',body:'По сообщению регионального издания, полный отбой воздушной опасности объявили утром 17 октября. Следите за официальными сообщениями экстренных служб. Источник: https://voronezhnews.ru/fn_1972241.html',photo:''},
+ {id:'rv-20261017-8',title:'Воронежские абитуриенты рассказали, что учитывают при выборе профессии',category:'Общество',time:'17 октября 2026 · 08:04',summary:'Для трети участников опроса важнейшим фактором стала возможность найти работу после окончания учёбы.',body:'«Вести Воронеж» опубликовали результаты опроса абитуриентов о выборе будущей профессии. По данным материала, примерно для трети респондентов главным критерием стала перспектива трудоустройства. Источник: https://vestivrn.ru/news/2026/10/17/',photo:''},
+ {id:'rv-20261017-9',title:'В Воронеже рассказали о погоде на субботу',category:'Город',time:'17 октября 2026 · 09:12',summary:'По прогнозу на 17 октября, ожидается облачная погода с прояснениями и без существенных осадков.',body:'В опубликованном утром прогнозе сообщалось о температуре около +17…+19 градусов и восточном ветре. Прогноз может меняться в течение дня. Источник: https://newsvoronezh.ru/society/2026/10/17/101060.html',photo:''},
+ {id:'rv-20261017-10',title:'В Воронежской области ночью объявляли тревогу в нескольких районах',category:'Происшествия',time:'17 октября 2026 · 09:47',summary:'Ночью сирены прямой угрозы БПЛА сработали в Нововоронеже, Острогожском и Лискинском муниципалитетах.',body:'Региональное издание сообщило о ночных сигналах тревоги в нескольких муниципалитетах. Оперативную информацию следует проверять по официальным каналам властей и МЧС. Источник: https://voronezhnews.ru/fn_1972170.html',photo:''},
+ {id:'rv-20261017-11',title:'В Воронежской области обсудили поддержку пожилых людей',category:'Общество',time:'17 октября 2026 · 10:56',summary:'В регионе сообщили о формировании комплексной системы работы с пожилыми людьми в рамках национальных проектов.',body:'Материал издания «Коммуна» от 17 октября посвящён региональной системе поддержки пожилых людей. Источник: https://www.communa.ru/',photo:''},
+ {id:'rv-20261017-12',title:'В Воронежской области поезд сбил автомобиль и задержался',category:'Происшествия',time:'17 октября 2026 · 11:09',summary:'В региональной новостной ленте сообщили о столкновении поезда с автомобилем и задержке движения.',body:'Краткая сводка опубликована в архиве новостей за 17 октября. Для уточнения последствий и расписания проверяйте сообщения перевозчика. Источник: https://news.bvf.ru/archive/',photo:''},
+ {id:'rv-20261017-13',title:'Воронежцы выступят на чемпионате и первенстве мира по панкратиону',category:'Спорт',time:'17 октября 2026 · 16:30',summary:'Региональная лента сообщила о спортсменах из Воронежа, которые примут участие в международных соревнованиях по панкратиону.',body:'Информация опубликована в региональном архиве новостей за 17 октября. Источник: https://news.bvf.ru/archive/',photo:''}
+];
+try {
+ const existingIds = new Set(customNews.map(item => item.id));
+ const missingFresh = freshEditorialNews.filter(item => !existingIds.has(item.id));
+ if (missingFresh.length) {
+   customNews = [...missingFresh, ...customNews];
+   localStorage.setItem('rv_custom_news', JSON.stringify(customNews));
+ }
+} catch(e) {}
+
+let photoData = '';
+document.getElementById('newsPhoto').addEventListener('change', e=>{
+ const file=e.target.files && e.target.files[0];
+ if(!file){photoData='';return;}
+ if(!file.type.startsWith('image/')){adminStatus.textContent='Выберите файл изображения.';e.target.value='';return;}
+ if(file.size>2*1024*1024){adminStatus.textContent='Фото больше 2 МБ. Выберите файл поменьше.';e.target.value='';return;}
+ const reader=new FileReader();
+ reader.onload=()=>{photoData=reader.result;const img=document.getElementById('photoPreview');img.src=photoData;img.style.display='block';};
+ reader.readAsDataURL(file);
+});
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function persistCustom(){try{localStorage.setItem('rv_custom_news',JSON.stringify(customNews));return true;}catch(e){adminStatus.textContent='Не удалось сохранить данные. Возможно, фото слишком большое.';return false;}}
+function renderAdminList(){
+ const list=document.getElementById('adminList');
+ list.innerHTML='';
+ customNews.forEach(item=>{
+  const row=document.createElement('div');row.className='admin-row';
+  const title=document.createElement('strong');title.textContent=item.title;
+  const actions=document.createElement('div');
+  const edit=document.createElement('button');edit.textContent='Редактировать';edit.onclick=()=>editNews(item.id);
+  const del=document.createElement('button');del.textContent='Удалить';del.onclick=()=>{if(confirm('Удалить новость «'+item.title+'»?')){customNews=customNews.filter(n=>n.id!==item.id);persistCustom();renderCustomCards();renderAdminList();}};
+  actions.append(edit,del);row.append(title,actions);list.append(row);
+ });
+ if(!customNews.length)list.innerHTML='<p>Пока нет добавленных новостей.</p>';
+}
+function clearEditor(){
+ document.getElementById('adminForm').reset();document.getElementById('editId').value='';photoData='';
+ const img=document.getElementById('photoPreview');img.style.display='none';img.removeAttribute('src');
+ document.getElementById('saveNews').textContent='Сохранить новость';
+}
+document.getElementById('clearEditor').addEventListener('click',clearEditor);
+function editNews(id){
+ const item=customNews.find(n=>n.id===id);if(!item)return;
+ document.getElementById('editId').value=item.id;
+ document.getElementById('newsTitle').value=item.title;
+ document.getElementById('newsCategory').value=item.category;
+ document.getElementById('newsTime').value=item.time||'Сегодня';
+ document.getElementById('newsSummary').value=item.summary;
+ photoData=item.photo||'';
+ const img=document.getElementById('photoPreview');if(photoData){img.src=photoData;img.style.display='block';}else{img.style.display='none';}
+ document.getElementById('saveNews').textContent='Сохранить изменения';
+ document.getElementById('adminForm').scrollIntoView({behavior:'smooth',block:'center'});
+}
+document.getElementById('adminForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const id=document.getElementById('editId').value||('news_'+Date.now());
+ const old=customNews.find(n=>n.id===id);
+ const item={id,title:document.getElementById('newsTitle').value.trim(),category:document.getElementById('newsCategory').value,time:document.getElementById('newsTime').value.trim()||'Сегодня',summary:document.getElementById('newsSummary').value.trim(),body:document.getElementById('newsSummary').value.trim(),photo:photoData||((old && !document.getElementById('newsPhoto').value) ? old.photo : '')};
+ if(old)customNews=customNews.map(n=>n.id===id?item:n);else customNews.unshift(item);
+ if(persistCustom()){adminStatus.textContent='Новость сохранена.';clearEditor();renderCustomCards();renderAdminList();}
+});
+
+const subscriberQueue=document.getElementById('subscriberQueue');
+document.getElementById('manageNewsTab').addEventListener('click',()=>{subscriberQueue.classList.remove('open');document.getElementById('adminList').style.display='grid';document.getElementById('adminForm').style.display='grid';document.getElementById('manageNewsTab').classList.add('active');document.getElementById('subscriberNewsTab').classList.remove('active');});
+document.getElementById('subscriberNewsTab').addEventListener('click',()=>{subscriberQueue.classList.add('open');document.getElementById('adminList').style.display='none';document.getElementById('adminForm').style.display='none';document.getElementById('subscriberNewsTab').classList.add('active');document.getElementById('manageNewsTab').classList.remove('active');renderSubscriberQueue();});
+function renderSubscriberQueue(){
+ const items=readSubscriberQueue();const pending=items.filter(n=>n.status==='pending').length;document.getElementById('pendingCount').textContent=pending?'('+pending+')':'';const box=document.getElementById('subscriberList');box.innerHTML='';if(!items.length){box.innerHTML='<p>Пока нет новостей от подписчиков.</p>';return;}
+ items.forEach(item=>{
+  const card=document.createElement('article');card.className='subscriber-item';
+  const title=document.createElement('strong');title.textContent=(item.number?'Новость #'+item.number+' · ':'Материал от подписчика · ')+item.created;
+  const status=document.createElement('p');status.textContent='Статус: '+({pending:'На рассмотрении',accepted:'Принята и опубликована',rejected:'Отклонена'}[item.status]||item.status);
+  const details=document.createElement('div');details.className='subscriber-details';details.style.display='none';details.style.marginTop='12px';
+  const body=document.createElement('p');body.style.whiteSpace='pre-wrap';body.textContent=item.text||'Текст не добавлен';details.append(body);
+  const mediaList=Array.isArray(item.media)?item.media:[];
+  if(mediaList.length){const mediaHeading=document.createElement('p');mediaHeading.textContent='Фото и видео ('+mediaList.length+'): ';mediaHeading.style.fontWeight='800';details.append(mediaHeading);const mediaGrid=document.createElement('div');mediaGrid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px';mediaList.forEach(file=>{const wrap=document.createElement('div');wrap.style.cssText='min-width:0;border:1px solid #e1e4e8;border-radius:8px;padding:8px;overflow:hidden';if(file.data&&file.type&&file.type.startsWith('image/')){const img=document.createElement('img');img.src=file.data;img.alt=file.name||'Фото подписчика';img.style.cssText='display:block;width:100%;max-height:320px;object-fit:contain;border-radius:6px';wrap.append(img);}else if(file.data&&file.type&&file.type.startsWith('video/')){const video=document.createElement('video');video.src=file.data;video.controls=true;video.style.cssText='display:block;width:100%;max-height:320px;border-radius:6px';wrap.append(video);}else{const unavailable=document.createElement('p');unavailable.textContent='Предпросмотр недоступен для этого ранее отправленного файла.';wrap.append(unavailable);}const filename=document.createElement('p');filename.textContent=file.name||'Вложение';filename.style.cssText='font-size:12px;overflow-wrap:anywhere;margin:7px 0 0';wrap.append(filename);mediaGrid.append(wrap);});details.append(mediaGrid);}else{const noMedia=document.createElement('p');noMedia.textContent='Без фото и видео.';details.append(noMedia);}
+  const toggle=document.createElement('button');toggle.type='button';toggle.textContent='Открыть новость и вложения';toggle.style.cssText='margin-top:10px;border:0;border-radius:7px;padding:10px 12px;background:#e3e5ea;color:#17191d;font-weight:800;cursor:pointer';toggle.onclick=()=>{const open=details.style.display==='none';details.style.display=open?'block':'none';toggle.textContent=open?'Свернуть материал':'Открыть новость и вложения';};card.append(title,status,toggle,details);
+  if(item.status==='pending'){
+   const editor=document.createElement('div');editor.style.cssText='display:none;margin-top:14px;padding:14px;border:1px solid #d8dce3;border-radius:10px;';
+   const labelStyle='display:block;font-weight:700;margin:9px 0 5px';const fieldStyle='box-sizing:border-box;width:100%;padding:10px;border:1px solid #cbd0d9;border-radius:7px;font:inherit';
+   const titleLabel=document.createElement('label');titleLabel.textContent='Заголовок';titleLabel.style.cssText=labelStyle;const titleInput=document.createElement('input');titleInput.value=item.title||'';titleInput.placeholder='Введите заголовок новости';titleInput.style.cssText=fieldStyle;titleLabel.append(titleInput);
+   const catLabel=document.createElement('label');catLabel.textContent='Категория';catLabel.style.cssText=labelStyle;const categorySelect=document.createElement('select');categorySelect.style.cssText=fieldStyle;['Мир','Технологии','Бизнес','Наука','Культура','Спорт','Город','Происшествия','Общество'].forEach(c=>{const opt=document.createElement('option');opt.value=c;opt.textContent=c;categorySelect.append(opt)});categorySelect.value=item.category||'Город';catLabel.append(categorySelect);
+   const textLabel=document.createElement('label');textLabel.textContent='Текст публикации';textLabel.style.cssText=labelStyle;const textArea=document.createElement('textarea');textArea.value=item.text||'';textArea.rows=7;textArea.style.cssText=fieldStyle;textLabel.append(textArea);
+   const hint=document.createElement('p');hint.textContent='Публикация появится на главной только после нажатия кнопки ниже.';hint.style.cssText='font-size:13px;color:#666;margin:10px 0';
+   const publish=document.createElement('button');publish.type='button';publish.textContent='Сохранить правки и опубликовать';publish.className='accept';publish.onclick=()=>{const headline=titleInput.value.trim();const text=textArea.value.trim();if(!headline||!text){alert('Заполните заголовок и текст новости.');return;}const published={id:'subscriber_'+item.id,title:headline,category:categorySelect.value,time:'Сегодня',summary:text.length>150?text.slice(0,147)+'…':text,body:text,photo:(item.media||[]).find(f=>f.type&&f.type.startsWith('image/')&&f.data)?.data||''};const previous=customNews.find(n=>n.id===published.id);if(previous)customNews=customNews.map(n=>n.id===published.id?published:n);else customNews.unshift(published);if(!persistCustom())return;const all=readSubscriberQueue();const target=all.find(n=>n.id===item.id);if(target){target.status='accepted';target.publishedTitle=headline;target.publishedText=text;if(!saveSubscriberQueue(all)){adminStatus.textContent='Публикация добавлена, но статус заявки не удалось сохранить.';return;}}renderCustomCards();renderSubscriberQueue();renderMySubmissionStatuses();adminStatus.textContent='Новость #'+(item.number||'')+' отредактирована и опубликована.';};
+   const cancel=document.createElement('button');cancel.type='button';cancel.textContent='Отмена';cancel.style.cssText='margin-left:8px;padding:10px 14px;border:0;border-radius:7px;cursor:pointer';cancel.onclick=()=>editor.style.display='none';editor.append(titleLabel,catLabel,textLabel,hint,publish,cancel);const actions=document.createElement('div');actions.className='admin-actions';const yes=document.createElement('button');yes.className='accept';yes.textContent='Принять и редактировать';yes.onclick=()=>{editor.style.display=editor.style.display==='none'?'block':'none';};const no=document.createElement('button');no.className='reject';no.textContent='Отклонить';no.onclick=()=>updateSubscriberStatus(item.id,'rejected');actions.append(yes,no);card.append(actions,editor);
+  }
+  box.append(card);
+ });
+}
+function updateSubscriberStatus(id,status){const items=readSubscriberQueue();const item=items.find(n=>n.id===id);if(!item)return;if(status==='accepted'){adminStatus.textContent='Откройте «Принять и редактировать», чтобы проверить и отредактировать новость перед публикацией.';return;}item.status=status;if(saveSubscriberQueue(items)){renderSubscriberQueue();adminStatus.textContent='Новость отклонена.';renderMySubmissionStatuses();}}
+
+function renderCustomCards(){
+ const container=document.getElementById('cards');
+ container.querySelectorAll('[data-custom="true"]').forEach(el=>el.remove());
+ customNews.forEach(item=>{
+  const card=document.createElement('article');card.className='card story';card.dataset.custom='true';card.dataset.newsId=item.id;card.dataset.category=item.category;card.dataset.title=item.title;card.dataset.body=item.body;
+  const visual=document.createElement('div');visual.className='cardvisual';
+  if(item.photo){visual.style.background='none';const img=document.createElement('img');img.src=item.photo;img.alt=item.title;img.style.cssText='width:100%;height:100%;object-fit:cover';visual.append(img);}else{visual.classList.add('no-photo');visual.textContent='Без вложений';}
+  const cat=document.createElement('span');cat.className='category';cat.textContent=item.category;
+  const title=document.createElement('h3');title.textContent=item.title;
+  const summary=document.createElement('p');summary.textContent=item.summary;
+  const meta=document.createElement('div');meta.className='meta';meta.textContent=item.time||'Сегодня';
+  card.append(visual,cat,title,summary,meta); if(item.source){const sourceLink=document.createElement('a');sourceLink.href=item.source;sourceLink.target='_blank';sourceLink.rel='noopener';sourceLink.textContent='Источник: '+(item.source.includes('vestivrn.ru')?'Вести Воронеж':item.source.includes('now36.ru')?'Воронеж Сейчас':'региональное издание');sourceLink.style.cssText='display:inline-block;margin-top:8px;font-size:12px;color:#687080;text-decoration:underline';sourceLink.addEventListener('click',e=>e.stopPropagation());card.append(sourceLink);}
+  card.addEventListener('click',()=>{recordStoryView(card);document.getElementById('modalCategory').textContent=item.category;document.getElementById('modalTitle').textContent=item.title;document.getElementById('modalBody').textContent=item.body;modal.classList.add('open');});
+  container.prepend(card);
+ });
+ updateCards();
+
+}
+document.getElementById('exportNews').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify(customNews,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='realny-voronezh-news.json';a.click();URL.revokeObjectURL(url);
+});
+renderCustomCards();
+renderAdminList();
+
+</script>
+</body>
+</html>
